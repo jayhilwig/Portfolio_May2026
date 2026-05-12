@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263 384" width="263" height="384">
+	<title>ISU-stackedAllBlack-ai</title>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<g id="Layer 1">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<path id="&lt;Compound Path&gt;" fill-rule="evenodd" class="s0" d="m200.8 147.4v-14.4h-46.2v38.6h67.2l26.5 23.2v78.5l-26.5 23.2h-67.2v28.4h46.2v47.5h-140v-47.5h46.2v-19.6l37.3-8.4c0.3 0 0.2-0.4-0.1-0.4h-104.5l-26.5-23.2v-34.4h47.6v14.4h46.2v-29.7l37.3-8.4c0.3 0 0.2-0.4-0.1-0.4h-104.5l-26.5-23.3v-78.5l26.5-23.1h67.3v-28.5h-46.2v-47.5h140v47.5h-46.2v28.5h46.2v-0.1h21l26.5 23.2v34.4zm19.8 67.4h-66v38.5h46.2v-29.8l19.9-8.3c0.2-0.1 0.1-0.4-0.1-0.4zm-76.2-81.3c0.2 0 0.2-0.5-0.1-0.5h-83.5v38.6h46.3v-29.7z"/>
+			</g>
+		</g>
+	</g>
+</svg>
