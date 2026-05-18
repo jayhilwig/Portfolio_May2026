@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Amazon Transparency — Anti-Counterfeiting UX Case Study | Jay Hilwig</title>
+  <meta name="description" content="Case study on Amazon Transparency, an anti-counterfeiting platform. Jay Hilwig led UX design across customer, seller, and internal systems, improving trust signals and product verification at scale." />
+  <link rel="canonical" href="https://jhilwig.com/amazon-transparency.html" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Amazon Transparency — UX Case Study" />
+  <meta property="og:description" content="Jay Hilwig led UX design across customer, seller, and internal systems for Amazon Transparency, improving product trust and verification at scale." />
+  <meta property="og:url" content="https://jhilwig.com/amazon-transparency.html" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amazon Transparency — UX Case Study" />
+  <meta name="twitter:description" content="UX case study on designing anti-counterfeiting systems at Amazon across customer, seller, and internal workflows." />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Amazon Transparency UX Case Study",
+    "author": {
+      "@type": "Person",
+      "name": "Jay Hilwig"
+    },
+    "about": [
+      "UX Design",
+      "Anti-counterfeiting",
+      "E-commerce",
+      "Enterprise Software",
+      "User Research",
+      "Product Design"
+    ],
+    "description": "Case study on Amazon Transparency, an anti-counterfeiting platform improving trust and product verification across customer, seller, and internal experiences.",
+    "url": "https://jhilwig.com/amazon-transparency.html"
+  }
+  </script>
+
+  <style>
+    .case-hero { padding: 140px 0 96px; }
+    .case-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: end; }
+    .case-hero h1 { max-width: 9ch; }
+    .case-summary { max-width: 680px; font-size: 18px; line-height: 1.5; margin-top: 28px; }
+    .case-visual { border: 1px solid rgba(0,0,0,.08); background: #f6f6f6; overflow: hidden; }
+    .case-visual img { width: 100%; display: block; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(0,0,0,.12); border: 1px solid rgba(0,0,0,.12); }
+    .stat-card { background: #fff; padding: 28px; min-height: 150px; }
+    .stat-number { font-family: "FT Regola Neue", Inter, sans-serif; font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: .9; letter-spacing: -.03em; margin-bottom: 16px; }
+    .artifact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .artifact-card { border-top: 1px solid rgba(0,0,0,.18); padding-top: 18px; }
+    .artifact-card img { width: 100%; border: 1px solid rgba(0,0,0,.08); background: #f6f6f6; margin-top: 18px; }
+    .quote-panel { border-top: 1px solid rgba(0,0,0,.18); border-bottom: 1px solid rgba(0,0,0,.18); padding: 32px 0; display: grid; gap: 28px; margin-top: 32px; }
+    .quote-panel blockquote { font-size: clamp(1.4rem, 2.6vw, 2.4rem); line-height: 1.18; margin: 0; max-width: 900px; }
+    .tool-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 36px; border-top: 1px solid rgba(0,0,0,.18); padding-top: 24px; }
+    .tool-item { border-bottom: 1px solid rgba(0,0,0,.12); padding-bottom: 18px; }
+    @media (max-width: 900px) {
+      .case-hero-grid, .artifact-grid, .tool-list, .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">jay hilwig</a>
+      <nav aria-label="Primary">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#ai-work">AI work</a>
+        <a href="https://jhilwig.com/JayHilwig.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://www.linkedin.com/in/jayhilwig/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Case study</div>
+          <h1>Amazon Transparency</h1>
+          <p class="case-summary">
+            Amazon Transparency helps brands reduce counterfeit risk, build customer trust, and create a more verifiable product experience across the purchase and post-purchase journey.
+          </p>
+        </div>
+
+        <div class="case-visual">
+          <img src="public/images/tr3_gpt.png" alt="Amazon Transparency mobile verification experience shown on a phone">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">6%</div>
+            <div>Decrease in customer returns for enrolled products.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2%</div>
+            <div>Increase in purchase rates through stronger trust signals.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2x</div>
+            <div>Expected growth in Transparency code scans.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">372</div>
+            <div>UserTesting sessions across the US, UK, and Germany.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Role + ownership</div>
+          <h2>Sole UX designer across a complex authentication ecosystem.</h2>
+        </div>
+        <div class="table">
+          <div class="row">
+            <div>
+              <div class="title">Transparency portal</div>
+              <div class="desc">Designed the web experience brands used to onboard products, order and print Transparency codes, access dashboards, and manage operations.</div>
+            </div>
+            <div class="meta">Brand tools</div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="title">Seller Central</div>
+              <div class="desc">Extended seller workflows with Transparency authentication features that fit into existing Amazon selling patterns.</div>
+            </div>
+            <div class="meta">Seller UX</div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="title">Fulfillment Centers</div>
+              <div class="desc">Designed authentication tools embedded in internal warehouse systems where speed, clarity, and accuracy were essential.</div>
+            </div>
+            <div class="meta">Internal tools</div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="title">Amazon.com + Amazon Lens</div>
+              <div class="desc">Integrated Transparency into customer touchpoints including detail pages, trust messaging, and scan-based verification.</div>
+            </div>
+            <div class="meta">Customer UX</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Problem</div>
+          <h2>Low awareness and weak trust signals.</h2>
+        </div>
+        <div>
+          <p class="lead">Transparency had a strong anti-counterfeiting promise, but that value was not obvious enough in the customer experience.</p>
+          <p class="desc">The challenge was to bring meaningful trust signals into high-visibility moments without adding friction or confusion. I helped define the language, flows, and visual treatments needed to make the program understandable, credible, and worth engaging with.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Research + discovery</div>
+          <h2>From landscape analysis to customer validation.</h2>
+        </div>
+        <div class="case-hero-grid">
+          <div><p class="lead">Research clarified how trust should be introduced, explained, and reinforced over time.</p></div>
+          <div class="table">
+            <div class="row">
+              <div>
+                <div class="title">Competitive analysis</div>
+                <div class="desc">Reviewed anti-counterfeiting and verification patterns to understand trust-building language, iconography, and call-to-action design.</div>
+              </div>
+              <div class="meta">Landscape</div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="title">Lean Canvas framing</div>
+                <div class="desc">Structured assumptions with Product to turn a broad anti-counterfeiting initiative into testable design decisions.</div>
+              </div>
+              <div class="meta">Strategy</div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="title">UserTesting validation</div>
+                <div class="desc">Ran 366 unmoderated and 6 moderated sessions across the US, UK, and DE to test comprehension, clarity, and the value of Amazon Lens.</div>
+              </div>
+              <div class="meta">Research</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="artifact-grid">
+          <div class="artifact-card">
+            <div class="kicker">Artifact</div>
+            <h3>Landscape + themes</h3>
+            <p class="desc">A common pattern across the analysis was the use of familiar iconography and similar color palettes to build trust with users.</p>
+            <img src="images/hero_CA3.svg" alt="Competitive analysis and themes for anti-counterfeiting experiences">
+          </div>
+          <div class="artifact-card">
+            <div class="kicker">Artifact</div>
+            <h3>Lean Canvas</h3>
+            <p class="desc">Lean Canvas helped the team align around assumptions, opportunity framing, and testable design decisions.</p>
+            <img src="images/Lean-Canvas34.svg" alt="Lean Canvas artifact for Amazon Transparency">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Design process</div>
+          <h2>Prototypes turned strategy into something teams could evaluate.</h2>
+        </div>
+        <div class="table">
+          <div class="row">
+            <div>
+              <div class="title">Customer flows</div>
+              <div class="desc">Created flows that introduced product authentication without interrupting the shopping journey.</div>
+            </div>
+            <div class="meta">Flow design</div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="title">Content strategy</div>
+              <div class="desc">Refined language after learning that “Verify with Transparency” was too vague without progressive explanation.</div>
+            </div>
+            <div class="meta">Trust messaging</div>
+          </div>
+          <div class="row">
+            <div>
+              <div class="title">Amazon Lens</div>
+              <div class="desc">Explored scan-based verification experiences that helped customers confirm authenticity when proof mattered most.</div>
+            </div>
+            <div class="meta">Mobile CX</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="artifact-grid">
+          <div class="artifact-card">
+            <div class="kicker">Prototype</div>
+            <h3>Flow diagram</h3>
+            <p class="desc">Mapping the flow helped clarify how customers moved from product discovery to verification.</p>
+            <img src="images/FlowDiagram2aa.svg" alt="Amazon Transparency user flow diagram">
+          </div>
+          <div class="artifact-card">
+            <div class="kicker">Final screens</div>
+            <h3>Customer-facing touchpoints</h3>
+            <p class="desc">Final designs emphasized clearer explanations, accessibility, iconography, and alignment with Amazon design system branding.</p>
+            <img src="images/Final-Transparency-screens-2.svg" alt="Final Amazon Transparency screen designs">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Validation + insights</div>
+          <h2>The language had to earn trust before the feature could.</h2>
+        </div>
+        <div>
+          <p class="lead">The strongest finding was that the initial message, “Verify with Transparency,” was too vague on its own.</p>
+          <p class="desc">Once participants saw progressive explanation and understood how the program could help them verify a product, sentiment improved significantly. That insight shaped the final content strategy and how the experience introduced value over time.</p>
+          <div class="quote-panel">
+            <blockquote>“The scanner is excellent for verification purposes and offers additional opportunities for future enhancements.”</blockquote>
+            <blockquote>“It’s compelling when there’s a problem, and I need proof to decide if I need to escalate the issue.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Research tools</div>
+          <h2>Research methods matched the question.</h2>
+        </div>
+        <div class="tool-list">
+          <div class="tool-item"><strong>UserTesting.com</strong><br>Moderated interviews, unmoderated surveys, prototype walkthroughs.</div>
+          <div class="tool-item"><strong>Qualtrics</strong><br>Complex branching surveys and studies requiring statistical significance.</div>
+          <div class="tool-item"><strong>Eye tracking</strong><br>Used to compare stated preferences with actual behavior.</div>
+           <div class="tool-item"><strong>In-person sessions</strong><br>One-on-one interviews and roundtable discussions.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container case-hero-grid">
+        <div>
+          <div class="kicker">Impact</div>
+          <h2>Improved trust signals in moments that mattered.</h2>
+        </div>
+        <div>
+          <p class="lead">Search, Detail, Progress Tracker, Amazon Lens, and content design improvements contributed to measurable gains for products enrolled in the Transparency program.</p>
+          <p class="desc">By making the program easier to understand and more credible in context, the experience helped strengthen trust signals and improve customer behavior in key moments of the journey.</p>
+          <a class="cta" href="index.html#work">
+            <span class="circle">↗</span>
+            <span>Back to work</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
