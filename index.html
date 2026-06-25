@@ -105,13 +105,33 @@
             href="https://jhilwig.com/JayHilwig.pdf"
             target="_blank"
             rel="noopener"
-            >Resume</a
+            style="display: inline-flex; align-items: center"
           >
+            <img
+              src="./public/images/PDF_logo.svg"
+              alt="PDF logo"
+              style="height: 1em; vertical-align: middle; margin-right: 0.3em"
+            />
+            Resume
+          </a>
           <a
             href="https://www.linkedin.com/in/jayhilwig/"
             target="_blank"
             rel="noopener"
-            >LinkedIn</a
+            style="display: inline-flex; align-items: center"
+          >
+            <img
+              src="./public/images/LinkedIn_logo.svg"
+              alt="LinkedIn logo"
+              style="height: 1em; vertical-align: middle; margin-right: 0.3em"
+            />
+            LinkedIn
+          </a>
+          <a
+            href="https://www.jhilwig.com/paintings/"
+            target="_blank"
+            rel="noopener"
+            >Paintings</a
           >
         </nav>
       </div>
@@ -214,10 +234,20 @@
               >
                 <div class="case-study-placeholder">
                   <div class="case-study-placeholder-mark">
-                    <img
-                      src="./public/images/hero2.svg"
-                      alt="Amazon Transparency visual"
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/images/hero2-mobile.webp"
+                      />
+                      <img
+                        src="./public/images/hero2.webp"
+                        alt="Amazon Transparency visual"
+                        width="1600"
+                        height="900"
+                        decoding="async"
+                        fetchpriority="high"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -297,10 +327,20 @@
                   class="case-study-placeholder case-study-placeholder--aloft"
                 >
                   <div class="case-study-placeholder-mark">
-                    <img
-                      src="./public/images/aloft.webp"
-                      alt="Aloft Appraisal visual"
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/images/aloft-mobile.webp"
+                      />
+                      <img
+                        src="./public/images/aloft.webp"
+                        alt="Aloft appraisal workflow visualization"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -391,10 +431,20 @@
               >
                 <div class="case-study-placeholder">
                   <div class="case-study-placeholder-mark">
-                    <img
-                      src="./public/images/ideo23.svg"
-                      alt="IDEO Method Cards visual"
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcset="./public/images/ideo23-mobile.webp"
+                      />
+                      <img
+                        src="./public/images/ideo23.webp"
+                        alt="IDEO mobile visual"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -769,6 +819,7 @@
                   <img
                     src="./public/images/docuformer2.webp"
                     alt="Docuformer prototype screenshot"
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -796,6 +847,7 @@
                   <img
                     src="./public/images/hide-ai-chatbots-screenshot2.webp"
                     alt="Hide AI Chatbots browser extension screenshot"
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -825,6 +877,7 @@
                   <img
                     src="./public/images/dissolvr_photo.webp"
                     alt="Dissolvr mobile messaging prototype screenshot"
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -854,6 +907,7 @@
                   <img
                     src="./public/images/applia.webp"
                     alt="Applia job application assistant screenshot"
+                    loading="lazy"
                   />
                 </div>
               </article>
@@ -885,6 +939,7 @@
                   <img
                     src="./public/images/searchGPT.webp"
                     alt="Search for GPT Chrome extension screenshot"
+                    loading="lazy"
                   />
                 </div>
               </article>
