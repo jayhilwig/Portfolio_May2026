@@ -571,6 +571,58 @@ h2 {
   }
 }
 
+@media (max-width: 640px) {
+  .ai-experiments {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+
+  .ai-experiments-head {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .ai-experiment-grid {
+    gap: 20px;
+  }
+
+  .ai-experiment-card {
+    padding: 22px 0;
+    gap: 16px;
+  }
+
+  .ai-experiment-card h4 {
+    font-size: clamp(1.2rem, 6vw, 1.55rem);
+  }
+
+  .ai-experiment-card p {
+    font-size: 0.98rem;
+  }
+
+  .ai-experiment-tags {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .ai-experiment-tags span {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .ai-experiment-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .build-activity .github-activity-card {
+    overflow-x: visible;
+  }
+
+  .build-activity .github-activity-card img {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 .feature-grid,
 .ai-grid,
 .muted-block {
