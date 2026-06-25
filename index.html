@@ -14,6 +14,17 @@
     <link rel="canonical" href="https://jhilwig.com/" />
     <meta name="robots" content="index, follow" />
 
+    <meta name="author" content="Jay Hilwig" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-title" content="Jay Hilwig" />
+
     <!-- Open Graph -->
     <meta property="og:title" content="Jay Hilwig — Product Designer" />
     <meta
@@ -21,6 +32,12 @@
       content="Product designer specializing in enterprise UX, AI-adjacent systems, and complex workflows."
     />
     <meta property="og:image" content="https://jhilwig.com/JayLWV2.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Jay Hilwig product design portfolio preview image"
+    />
     <meta property="og:url" content="https://jhilwig.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jay Hilwig Portfolio" />
@@ -33,6 +50,10 @@
       content="Product designer specializing in enterprise UX, AI-adjacent systems, and complex workflows."
     />
     <meta name="twitter:image" content="https://jhilwig.com/JayLWV2.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Jay Hilwig product design portfolio preview image"
+    />
     <meta name="twitter:url" content="https://jhilwig.com/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +64,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jay Hilwig",
+        "url": "https://jhilwig.com/",
+        "jobTitle": "Product Designer",
+        "sameAs": ["https://www.linkedin.com/in/jayhilwig/"]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -774,7 +810,7 @@
 
                 <div class="ai-experiment-media">
                   <img
-                    src="./public/images/dissolvr-screenshot.jpg"
+                    src="./public/images/dissolvr_photo.webp"
                     alt="Dissolvr mobile messaging prototype screenshot"
                   />
                 </div>
@@ -1132,9 +1168,9 @@
       <section class="quote-section">
         <div class="container quote-grid">
           <blockquote>
-            “Graphical excellence is that which gives to the viewer the greatest
+            Graphical excellence is that which gives to the viewer the greatest
             number of ideas in the shortest time with the least ink in the
-            smallest space.”
+            smallest space.
             <br /><br />
             <em>Edward Tufte</em>
           </blockquote>
