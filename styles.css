@@ -225,6 +225,7 @@ h1 {
 .section-label,
 .kicker {
   font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
