@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -777,14 +778,9 @@
                 aria-labelledby="build-activity-title"
               >
                 <div>
-                  <div class="ai-experiment-status">Recent builds</div>
+                  <div class="ai-experiment-status">Recent GitHub activity</div>
                   <h4 id="build-activity-title">
-                    Still making, testing, and shipping.
-                  </h4>
-                  <p>
-                    A lightweight snapshot of recent GitHub activity across
-                    product experiments, prototypes, and coding practice.
-                  </p>
+                    Still building and shipping on GitHub.
                 </div>
 
                 <div class="github-activity-card">
@@ -816,11 +812,22 @@
                 </div>
 
                 <div class="ai-experiment-media">
-                  <img
-                    src="./public/images/docuformer2.webp"
-                    alt="Docuformer prototype screenshot"
-                    loading="lazy"
-                  />
+                  <button
+                    class="lightbox-trigger"
+                    style="
+                      border: none;
+                      background: none;
+                      padding: 0;
+                      cursor: pointer;
+                    "
+                  >
+                    <img
+                      src="./public/images/docuformer2.webp"
+                      alt="Docuformer prototype screenshot"
+                      loading="lazy"
+                      style="display: block"
+                    />
+                  </button>
                 </div>
               </article>
 
@@ -844,11 +851,75 @@
                 </div>
 
                 <div class="ai-experiment-media">
-                  <img
-                    src="./public/images/hide-ai-chatbots-screenshot2.webp"
-                    alt="Hide AI Chatbots browser extension screenshot"
-                    loading="lazy"
-                  />
+                  <button
+                    class="lightbox-trigger"
+                    style="
+                      border: none;
+                      background: none;
+                      padding: 0;
+                      cursor: pointer;
+                    "
+                  >
+                    <img
+                      src="./public/images/hide-ai-chatbots-screenshot2.webp"
+                      alt="Hide AI Chatbots browser extension screenshot"
+                      loading="lazy"
+                      style="display: block"
+                    />
+                  </button>
+                  <div
+                    id="lightbox-modal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Image preview"
+                  >
+                    <span
+                      class="close-btn"
+                      aria-label="Close modal"
+                      tabindex="0"
+                      >&times;</span
+                    >
+                    <img src="" alt="" />
+                  </div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      const modal = document.getElementById("lightbox-modal");
+                      const modalImg = modal.querySelector("img");
+                      const closeBtn = modal.querySelector(".close-btn");
+
+                      document
+                        .querySelectorAll(".lightbox-trigger img")
+                        .forEach((img) => {
+                          img.addEventListener("click", () => {
+                            modal.classList.add("active");
+                            modalImg.src = img.src;
+                            modalImg.alt = img.alt;
+                          });
+                        });
+
+                      closeBtn.addEventListener("click", () => {
+                        modal.classList.remove("active");
+                        modalImg.src = "";
+                        modalImg.alt = "";
+                      });
+
+                      modal.addEventListener("click", (e) => {
+                        if (e.target === modal) {
+                          modal.classList.remove("active");
+                          modalImg.src = "";
+                          modalImg.alt = "";
+                        }
+                      });
+
+                      closeBtn.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          closeBtn.click();
+                        }
+                      });
+                    });
+                  </script>
                 </div>
               </article>
 
@@ -874,11 +945,22 @@
                 </div>
 
                 <div class="ai-experiment-media">
-                  <img
-                    src="./public/images/dissolvr_photo.webp"
-                    alt="Dissolvr mobile messaging prototype screenshot"
-                    loading="lazy"
-                  />
+                  <button
+                    class="lightbox-trigger"
+                    style="
+                      border: none;
+                      background: none;
+                      padding: 0;
+                      cursor: pointer;
+                    "
+                  >
+                    <img
+                      src="./public/images/dissolvr_photo.webp"
+                      alt="Dissolvr mobile messaging prototype screenshot"
+                      loading="lazy"
+                      style="display: block"
+                    />
+                  </button>
                 </div>
               </article>
 
@@ -904,11 +986,22 @@
                 </div>
 
                 <div class="ai-experiment-media">
-                  <img
-                    src="./public/images/applia.webp"
-                    alt="Applia job application assistant screenshot"
-                    loading="lazy"
-                  />
+                  <button
+                    class="lightbox-trigger"
+                    style="
+                      border: none;
+                      background: none;
+                      padding: 0;
+                      cursor: pointer;
+                    "
+                  >
+                    <img
+                      src="./public/images/applia.webp"
+                      alt="Applia job application assistant screenshot"
+                      loading="lazy"
+                      style="display: block"
+                    />
+                  </button>
                 </div>
               </article>
 
@@ -936,12 +1029,33 @@
                 </div>
 
                 <div class="ai-experiment-media">
-                  <img
-                    src="./public/images/searchGPT.webp"
-                    alt="Search for GPT Chrome extension screenshot"
-                    loading="lazy"
-                  />
+                  <button
+                    class="lightbox-trigger"
+                    style="
+                      border: none;
+                      background: none;
+                      padding: 0;
+                      cursor: pointer;
+                    "
+                  >
+                    <img
+                      src="./public/images/searchGPT.webp"
+                      alt="Search for GPT Chrome extension screenshot"
+                      loading="lazy"
+                      style="display: block"
+                    />
+                  </button>
                 </div>
+                <style>
+                  .lightbox-trigger img {
+                    border-radius: 6px;
+                    transition: border-color 0.3s ease;
+                  }
+
+                  .lightbox-trigger img:hover {
+                    border-color: var(--link);
+                  }
+                </style>
               </article>
             </div>
           </div>
