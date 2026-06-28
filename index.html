@@ -100,8 +100,9 @@
       <div class="container nav">
         <a href="#top" class="brand">jay hilwig</a>
         <nav class="nav-links" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#ai-work">AI work</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#cv" class="nav-link">CV</a>
+          <a href="#ai-work" class="nav-link">AI work</a>
           <a
             href="https://jhilwig.com/JayHilwig.pdf"
             target="_blank"
@@ -882,44 +883,6 @@
                     <img src="" alt="" />
                   </div>
 
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      const modal = document.getElementById("lightbox-modal");
-                      const modalImg = modal.querySelector("img");
-                      const closeBtn = modal.querySelector(".close-btn");
-
-                      document
-                        .querySelectorAll(".lightbox-trigger img")
-                        .forEach((img) => {
-                          img.addEventListener("click", () => {
-                            modal.classList.add("active");
-                            modalImg.src = img.src;
-                            modalImg.alt = img.alt;
-                          });
-                        });
-
-                      closeBtn.addEventListener("click", () => {
-                        modal.classList.remove("active");
-                        modalImg.src = "";
-                        modalImg.alt = "";
-                      });
-
-                      modal.addEventListener("click", (e) => {
-                        if (e.target === modal) {
-                          modal.classList.remove("active");
-                          modalImg.src = "";
-                          modalImg.alt = "";
-                        }
-                      });
-
-                      closeBtn.addEventListener("keydown", (e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          closeBtn.click();
-                        }
-                      });
-                    });
-                  </script>
                 </div>
               </article>
 
@@ -1361,6 +1324,71 @@
       </section>
     </main>
     <script>
+      document
+        .querySelectorAll('.nav-links a[href^="#"], .brand[href^="#"]')
+        .forEach((link) => {
+          link.addEventListener("click", (event) => {
+            const id = link.getAttribute("href");
+            const target = document.querySelector(id);
+            if (!target) return;
+
+            event.preventDefault();
+
+            const headerOffset = 72;
+            const top =
+              target.getBoundingClientRect().top +
+              window.scrollY -
+              headerOffset;
+
+            window.scrollTo({
+              top,
+              behavior: "smooth",
+            });
+          });
+        });
+
+      const modal = document.getElementById("lightbox-modal");
+
+      if (modal) {
+        const modalImg = modal.querySelector("img");
+        const closeBtn = modal.querySelector(".close-btn");
+
+        function closeModal() {
+          modal.classList.remove("active");
+          modalImg.src = "";
+          modalImg.alt = "";
+        }
+
+        document.querySelectorAll(".lightbox-trigger img").forEach((img) => {
+          img.addEventListener("click", () => {
+            modal.classList.add("active");
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+
+        closeBtn.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            closeModal();
+          }
+        });
+
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+      }
+
       // Design Technology Fluency tabs/views
       const ratingSymbol = "★"; // Swap this for ✦, ●, ◆, ✹, emoji, etc.
 
@@ -1916,6 +1944,8 @@
         }
       });
 
+      
+
       viewButtons.forEach((button) => {
         button.addEventListener("click", () => {
           activeView = button.dataset.view;
@@ -1926,6 +1956,8 @@
           mapView.classList.toggle("is-hidden", activeView !== "map");
         });
       });
+
+      
 
       updateView("auto");
     </script>
