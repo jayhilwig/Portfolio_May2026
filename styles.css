@@ -1529,10 +1529,10 @@ main,
   #ai-work,
   #tools,
   #cv {
-    padding-top: 124px !important;
+    padding-top: 148px !important;
   }
   .hero {
-    padding-top: 56px !important;
+    padding-top: 112px !important;
   }
 }
 /* Mobile: 3 rows header, approx 140px height */
@@ -1541,9 +1541,9 @@ main,
   #ai-work,
   #tools,
   #cv {
-    padding-top: 172px !important;
+    padding-top: 192px !important;
   }
   .hero {
-    padding-top: 140px !important;
+    padding-top: 156px !important;
   }
 }
