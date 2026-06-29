@@ -657,7 +657,9 @@
                                     <img src="./public/images/hide-ai-chatbots-screenshot2.webp" alt="Hide AI Chatbots browser extension screenshot" loading="lazy" style="display: block" />
                                 </button>
                                 <div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image preview">
-                                    <span class="close-btn" aria-label="Close modal" tabindex="0">&times;</span>
+                                    <button class="close-btn" type="button" aria-label="Close image preview">
+                                      ×
+                                    </button>
                                     <img src="" alt="" />
                                 </div>
 
@@ -787,7 +789,7 @@
                         <div class="tf-kicker">Tools, systems, platforms</div>
                         <h2>From interface craft to AI workflows.</h2>
                     </div>
-                    <div class="tf-view-switch" aria-label="View switcher">
+                    <div class="tf-view-switch">
                         <button class="tf-view-btn is-active" type="button" data-view="table">
                             Table
                         </button>
@@ -797,7 +799,7 @@
                     </div>
                 </div>
 
-                <div class="tf-tab-scroll" aria-label="Technology categories">
+                <div class="tf-tab-scroll">
                     <div class="tf-tabs" role="tablist" aria-label="Technology categories" id="categoryTabs"></div>
                 </div>
 
@@ -1532,7 +1534,7 @@
                   ${ratingBar(level)}
                 </div>
                 <p>${description}</p>
-                <div class="tf-bar" aria-label="${name} fluency level ${level} out of 5">
+                <div class="tf-bar" role="img" aria-label="${name} fluency level ${level} out of 5">
                   <span style="width: ${(level / 5) * 100}%"></span>
                 </div>
               </article>
