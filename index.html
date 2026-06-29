@@ -70,7 +70,8 @@
             <a href="#top" class="brand">Jay Hilwig</a>
             <nav class="nav-links" aria-label="Primary">
                 <a href="#work" class="nav-link">Work</a>
-                <a href="#ai-work" class="nav-link">AI work</a>
+                <a href="#ai-work" class="nav-link">AI & Experiments</a>
+                <a href="#tools" class="nav-link">Technical</a>
                 <a href="#cv" class="nav-link">CV</a>
                 <a href="https://jhilwig.com/JayHilwig.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center">
                     <img src="./public/images/PDF_logo.svg" alt="PDF logo" style="height: 1em; vertical-align: middle; margin-right: 0.3em" />
@@ -416,56 +417,6 @@
                 </a>
                 -->
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="fluency" class="tf-module work">
-            <div class="tf-container">
-                <div class="tf-module-head">
-                    <div>
-                        <div class="tf-kicker">Tools, systems, platforms</div>
-                        <h2>From interface craft to AI workflows.</h2>
-                    </div>
-                    <div class="tf-view-switch" aria-label="View switcher">
-                        <button class="tf-view-btn is-active" type="button" data-view="table">
-                            Table
-                        </button>
-                        <button class="tf-view-btn" type="button" data-view="map">
-                            Map
-                        </button>
-                    </div>
-                </div>
-
-                <div class="tf-tab-scroll" aria-label="Technology categories">
-                    <div class="tf-tabs" role="tablist" aria-label="Technology categories" id="categoryTabs"></div>
-                </div>
-
-                <p class="tf-panel-intro" id="categoryIntro"></p>
-
-                <div class="tf-panel" id="tableView">
-                    <div class="tf-table-wrap">
-                        <table class="tf-table">
-                            <caption id="tableCaption">
-                                Technology fluency by category
-                            </caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Technology</th>
-                                    <th scope="col">Designer-perspective description</th>
-                                    <th scope="col">Level</th>
-                                </tr>
-                            </thead>
-                            <tbody id="techRows"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="tf-panel is-hidden" id="mapView" aria-live="polite">
-                    <div class="tf-map-layout">
-                        <aside class="tf-map-summary" id="mapSummary"></aside>
-                        <div class="tf-map-canvas" id="mapCanvas"></div>
                     </div>
                 </div>
             </div>
@@ -827,6 +778,58 @@
                 </div>
             </div>
         </section>
+
+
+               <section id="tools" class="tf-module work">
+            <div class="tf-container">
+                <div class="tf-module-head">
+                    <div>
+                        <div class="tf-kicker">Tools, systems, platforms</div>
+                        <h2>From interface craft to AI workflows.</h2>
+                    </div>
+                    <div class="tf-view-switch" aria-label="View switcher">
+                        <button class="tf-view-btn is-active" type="button" data-view="table">
+                            Table
+                        </button>
+                        <button class="tf-view-btn" type="button" data-view="map">
+                            Map
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tf-tab-scroll" aria-label="Technology categories">
+                    <div class="tf-tabs" role="tablist" aria-label="Technology categories" id="categoryTabs"></div>
+                </div>
+
+                <p class="tf-panel-intro" id="categoryIntro"></p>
+
+                <div class="tf-panel" id="tableView">
+                    <div class="tf-table-wrap">
+                        <table class="tf-table">
+                            <caption id="tableCaption">
+                                Technology fluency by category
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Technology</th>
+                                    <th scope="col">Designer-perspective description</th>
+                                    <th scope="col">Level</th>
+                                </tr>
+                            </thead>
+                            <tbody id="techRows"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tf-panel is-hidden" id="mapView" aria-live="polite">
+                    <div class="tf-map-layout">
+                        <aside class="tf-map-summary" id="mapSummary"></aside>
+                        <div class="tf-map-canvas" id="mapCanvas"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <section id="cv" class="cv-section work">
             <div class="container">
@@ -1669,7 +1672,7 @@
         }
     </script>
     <script>
-        const sectionIds = ["work", "ai-work", "cv"];
+        const sectionIds = ["work", "ai-work", "tools", "cv"];
         const navLinks = document.querySelectorAll(".nav-link");
 
         function setActiveNav(id) {
