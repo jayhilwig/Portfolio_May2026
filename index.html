@@ -800,7 +800,7 @@
                 </div>
 
                 <div class="tf-tab-scroll">
-                    <div class="tf-tabs" role="tablist" aria-label="Technology categories" id="categoryTabs"></div>
+                    <div class="tf-tabs" aria-label="Technology categories" id="categoryTabs"></div>
                 </div>
 
                 <p class="tf-panel-intro" id="categoryIntro"></p>
@@ -1457,19 +1457,17 @@
                 tabs.innerHTML = categories
                     .map(
                         (category, index) => `
-          <button
-            class="tf-tab ${category.id === activeCategoryId ? "is-active" : ""}"
-            role="tab"
-            id="tab-${category.id}"
-            aria-selected="${category.id === activeCategoryId}"
-            aria-controls="panel-${category.id}"
-            tabindex="${category.id === activeCategoryId ? "0" : "-1"}"
-            data-category="${category.id}"
-            type="button"
-          >
-            <span>${category.label}</span>
-            <small class="tf-tab-count ${category.id === activeCategoryId ? "is-active-count" : ""}">${category.items.length}</small>
-          </button>
+            <button
+              class="tf-tab ${category.id === activeCategoryId ? "is-active" : ""}"
+              aria-pressed="${category.id === activeCategoryId}"
+              data-category="${category.id}"
+              type="button"
+            >
+              <span>${category.label}</span>
+              <small class="tf-tab-count ${category.id === activeCategoryId ? "is-active-count" : ""}">
+                ${category.items.length}
+              </small>
+            </button>
         `,
                     )
                     .join("");
