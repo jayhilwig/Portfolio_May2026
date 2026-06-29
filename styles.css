@@ -1498,6 +1498,7 @@ main,
 @media (max-width: 900px) {
   #work,
   #ai-work,
+  #tools,
   #cv {
     padding-top: 124px !important;
   }
@@ -1509,6 +1510,7 @@ main,
 @media (max-width: 600px) {
   #work,
   #ai-work,
+  #tools,
   #cv {
     padding-top: 172px !important;
   }
