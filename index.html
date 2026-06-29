@@ -1429,9 +1429,15 @@
               const label = ratingLabels[level] || `${level} out of 5`;
 
               return `
-                <span class="tf-rating-bar" aria-label="${level} out of 5: ${label}" title="${label}">
+                  <span
+                    class="tf-rating-bar tooltip-target"
+                    role="img"
+                    tabindex="0"
+                    aria-label="${level} out of 5: ${label}"
+                    data-tooltip="${level} out of 5 — ${label}"
+                  >
                   ${Array.from({ length: 5 }, (_, i) => `
-                    <span class="tf-segment ${i < level ? "is-filled" : ""}"></span>
+                    <span aria-hidden="true" class="tf-segment ${i < level ? "is-filled" : ""}"></span>
                   `).join("")}
                 </span>
               `;
