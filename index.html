@@ -94,6 +94,7 @@
         "sameAs": ["https://www.linkedin.com/in/jayhilwig/"]
       }
     </script>
+   
   </head>
   <body>
     <header class="site-header">
@@ -101,8 +102,8 @@
         <a href="#top" class="brand">jay hilwig</a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#work" class="nav-link">Work</a>
-          <a href="#cv" class="nav-link">CV</a>
           <a href="#ai-work" class="nav-link">AI work</a>
+          <a href="#cv" class="nav-link">CV</a>
           <a
             href="https://jhilwig.com/JayHilwig.pdf"
             target="_blank"
@@ -1324,29 +1325,6 @@
       </section>
     </main>
     <script>
-      document
-        .querySelectorAll('.nav-links a[href^="#"], .brand[href^="#"]')
-        .forEach((link) => {
-          link.addEventListener("click", (event) => {
-            const id = link.getAttribute("href");
-            const target = document.querySelector(id);
-            if (!target) return;
-
-            event.preventDefault();
-
-            const headerOffset = 72;
-            const top =
-              target.getBoundingClientRect().top +
-              window.scrollY -
-              headerOffset;
-
-            window.scrollTo({
-              top,
-              behavior: "smooth",
-            });
-          });
-        });
-
       const modal = document.getElementById("lightbox-modal");
 
       if (modal) {
@@ -1377,28 +1355,27 @@
         });
 
         modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            closeModal();
-          }
+            const link = event.target.closest('a[href^="#"]');
+            if (!link || !scrollTargets.has(link.getAttribute("href"))) return;
+
+            const target = document.querySelector(link.getAttribute("href"));
+            if (!target) return;
+
+            event.preventDefault();
+
+            requestAnimationFrame(() => {
+              const header = document.querySelector(".site-header");
+              const headerHeight = header ? header.offsetHeight : 0;
+              const targetTop =
+                target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+              window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: "smooth",
+              });
+              history.pushState(null, "", link.getAttribute("href"));
+            });
         });
-
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
-          }
-        });
-      }
-
-      // Design Technology Fluency tabs/views
-      const ratingSymbol = "★"; // Swap this for ✦, ●, ◆, ✹, emoji, etc.
-
-      const ratingLabels = {
-        1: "Yikes. I know it exists, but nobody should hand me the keys yet.",
-        2: "I can navigate it without breaking too much glass.",
-        3: "Useful working fluency. Enough to build, edit, or collaborate well.",
-        4: "Strong designer-builder territory. Real project confidence.",
-        5: "Simply the best. Core strength / very comfortable.",
-      };
 
       const categories = [
         {
@@ -1960,6 +1937,7 @@
       
 
       updateView("auto");
-    </script>
+    }
+  </script>
   </body>
 </html>
