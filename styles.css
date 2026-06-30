@@ -261,6 +261,104 @@ h1 {
   color: var(--muted);
   font-size: 0.96rem;
 }
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: start;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.stat-card {
+  border: 1px solid var(--line-dark);
+  padding: 20px;
+  background: #fff;
+}
+.stat-number {
+  font-family: "FT Regola Neue", Inter, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.table {
+  border-top: 1px solid var(--line-dark);
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.6fr);
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-dark);
+  align-items: start;
+}
+.title {
+  font-family: "FT Regola Neue", Inter, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.desc,
+.lead {
+  color: #444;
+  line-height: 1.55;
+  font-size: 14px;
+}
+.meta {
+  color: #444;
+  line-height: 1.55;
+  font-size: 14px;
+  justify-self: end;
+  text-align: right;
+}
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.artifact-card {
+  border-top: 1px solid var(--line-dark);
+  padding-top: 20px;
+}
+.artifact-card img {
+  margin-top: 16px;
+  width: 100%;
+  height: auto;
+}
+.quote-panel {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.tool-list {
+  display: grid;
+  gap: 14px;
+}
+.tool-item {
+  border-top: 1px solid var(--line-dark);
+  padding-top: 12px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  color: var(--link);
+  text-decoration: none;
+}
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .dark-section {
   background: var(--panel);
   color: var(--white);
@@ -942,7 +1040,10 @@ blockquote em {
   .feature-grid,
   .muted-block,
   .quote-grid,
-  .ai-grid {
+  .ai-grid,
+  .case-hero-grid,
+  .artifact-grid,
+  .stat-grid {
     grid-template-columns: 1fr;
   }
   .cv-row,
@@ -959,6 +1060,13 @@ blockquote em {
   }
   .feature-image {
     aspect-ratio: 16 / 9;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .meta {
+    justify-self: start;
+    text-align: left;
   }
 }
 .case-study-placeholder--aloft .case-study-placeholder-mark {
