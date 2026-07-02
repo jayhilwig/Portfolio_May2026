@@ -410,7 +410,7 @@
                 users.
               </p>
               <img
-                src="images/hero_CA3.svg"
+                src="images/comp_analysis.svg"
                 alt="Competitive analysis and themes for anti-counterfeiting experiences"
               />
             </div>
@@ -422,7 +422,7 @@
                 opportunity framing, and testable design decisions.
               </p>
               <img
-                src="images/Lean-Canvas34.svg"
+                src="images/Lean_canvas.svg"
                 alt="Lean Canvas artifact for Amazon Transparency"
               />
             </div>
@@ -500,6 +500,85 @@
                 alt="Final Amazon Transparency screen designs"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="amazon-section amazon-shelf">
+        <div class="container">
+          <div class="section-head">
+            <div class="kicker">Media + references</div>
+            <h2>Supporting links and working placeholders.</h2>
+          </div>
+
+          <div class="resource-grid">
+            <a
+              class="resource-card resource-card--preview"
+              href="#yt-preview"
+              aria-label="Open YouTube embedded preview"
+            >
+              <div class="resource-card-media resource-card-media--video">
+                <span class="resource-chip">Embedded YouTube preview</span>
+                <img
+                  src="public/images/hero2.svg"
+                  alt="YouTube preview thumbnail"
+                  class="resource-thumb resource-thumb--wide"
+                />
+              </div>
+              <div class="resource-card-body">
+                <div class="kicker">Video</div>
+                <h3>Watch the case study preview</h3>
+                <p class="desc">
+                  This tile is a placeholder for an embedded YouTube player.
+                  I’ve framed it so the final iframe can drop in without
+                  changing the page style.
+                </p>
+              </div>
+            </a>
+
+            <button
+              class="resource-card resource-card--button"
+              type="button"
+              data-modal-target="figma-placeholder"
+            >
+              <div class="resource-card-media resource-card-media--figma">
+                <img
+                  src="public/images/figma_logo.svg"
+                  alt="Figma logo"
+                  class="resource-thumb resource-thumb--logo"
+                />
+                <span class="resource-chip">Figma launcher</span>
+              </div>
+              <div class="resource-card-body">
+                <div class="kicker">Prototype</div>
+                <h3>Open Figma inline later</h3>
+                <p class="desc">
+                  This is the placeholder launcher for the future Figma popup.
+                  The button will open the separate window you asked for.
+                </p>
+              </div>
+            </button>
+
+            <a
+              class="resource-card"
+              href="public/images/CTP_CX_interviews.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="resource-card-media resource-card-media--doc">
+                <img
+                  src="public/images/PDF_logo.svg"
+                  alt="PDF icon"
+                  class="resource-thumb resource-thumb--logo"
+                />
+                <span class="resource-chip">PDF reference</span>
+              </div>
+              <div class="resource-card-body">
+                <div class="kicker">Research</div>
+                <h3>Customer interview notes</h3>
+                <p class="desc">Supporting research material in PDF form.</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -587,6 +666,30 @@
         </div>
       </section>
     </main>
+
+    <div class="amazon-modal" id="figma-placeholder" aria-hidden="true">
+      <div
+        class="amazon-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="figma-placeholder-title"
+      >
+        <button
+          class="amazon-modal-close"
+          type="button"
+          aria-label="Close Figma placeholder"
+        >
+          ×
+        </button>
+        <div class="kicker">Figma placeholder</div>
+        <h3 id="figma-placeholder-title">Launch the Figma preview here</h3>
+        <p class="desc">
+          This popup is ready for a future iframe embed. Use it as the separate
+          window placeholder for Figma.
+        </p>
+      </div>
+    </div>
+
     <script>
       (() => {
         const body = document.body;
@@ -596,6 +699,9 @@
         const searchInput = document.querySelector(".amazon-search-input");
         const searchButton = document.querySelector(".amazon-search-button");
         const backdrop = document.querySelector(".amazon-search-backdrop");
+        const modalTriggers = document.querySelectorAll("[data-modal-target]");
+        const modal = document.getElementById("figma-placeholder");
+        const modalClose = document.querySelector(".amazon-modal-close");
 
         if (!header || !searchWrap || !backdrop) return;
 
@@ -633,6 +739,25 @@
           event.preventDefault();
         });
         backdrop.addEventListener("click", closeSearch);
+
+        const openModal = () => {
+          modal?.classList.add("is-open");
+          modal?.setAttribute("aria-hidden", "false");
+        };
+
+        const closeModal = () => {
+          modal?.classList.remove("is-open");
+          modal?.setAttribute("aria-hidden", "true");
+        };
+
+        modalTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", openModal);
+        });
+
+        modalClose?.addEventListener("click", closeModal);
+        modal?.addEventListener("click", (event) => {
+          if (event.target === modal) closeModal();
+        });
 
         document.addEventListener("click", (event) => {
           if (!body.classList.contains("is-search-open")) return;
