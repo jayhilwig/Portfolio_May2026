@@ -1844,6 +1844,10 @@ main,
   cursor: pointer;
 }
 
+.resource-card--preview {
+  appearance: none;
+}
+
 .resource-card-media {
   position: relative;
   min-height: 180px;
@@ -1904,6 +1908,10 @@ main,
   max-width: 160px;
 }
 
+.resource-card--preview .resource-card-media--video {
+  padding: 18px;
+}
+
 .resource-chip {
   position: absolute;
   left: 16px;
@@ -1950,6 +1958,16 @@ main,
   margin: 6px 0 10px;
   font-size: 1.3rem;
   line-height: 1.08;
+}
+
+.lightbox-trigger {
+  display: block;
+  margin-top: 14px;
+}
+
+.lightbox-trigger img {
+  display: block;
+  width: 100%;
 }
 
 .amazon-modal {

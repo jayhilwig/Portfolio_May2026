@@ -409,10 +409,12 @@
                 iconography and similar color palettes to build trust with
                 users.
               </p>
-              <img
-                src="images/comp_analysis.svg"
-                alt="Competitive analysis and themes for anti-counterfeiting experiences"
-              />
+              <div class="lightbox-trigger">
+                <img
+                  src="public/images/comp_analysis.svg"
+                  alt="Competitive analysis and themes for anti-counterfeiting experiences"
+                />
+              </div>
             </div>
             <div class="artifact-card">
               <div class="kicker">Artifact</div>
@@ -421,10 +423,12 @@
                 Lean Canvas helped the team align around assumptions,
                 opportunity framing, and testable design decisions.
               </p>
-              <img
-                src="images/Lean_canvas.svg"
-                alt="Lean Canvas artifact for Amazon Transparency"
-              />
+              <div class="lightbox-trigger">
+                <img
+                  src="public/images/Lean_canvas.svg"
+                  alt="Lean Canvas artifact for Amazon Transparency"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -483,10 +487,13 @@
                 Mapping the flow helped clarify how customers moved from product
                 discovery to verification.
               </p>
-              <img
-                src="images/FlowDiagram2aa.svg"
-                alt="Amazon Transparency user flow diagram"
-              />
+              <div class="lightbox-trigger">
+                <img
+                  src="public/images/FlowDiagram.svg"
+                  alt="Amazon Transparency user flow diagram"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div class="artifact-card">
               <div class="kicker">Final screens</div>
@@ -495,10 +502,12 @@
                 Final designs emphasized clearer explanations, accessibility,
                 iconography, and alignment with Amazon design system branding.
               </p>
-              <img
-                src="images/Final-Transparency-screens-2.svg"
-                alt="Final Amazon Transparency screen designs"
-              />
+              <div class="lightbox-trigger">
+                <img
+                  src="public/images/Final-Transparency-screens-2.svg"
+                  alt="Final Amazon Transparency screen designs"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -512,11 +521,7 @@
           </div>
 
           <div class="resource-grid">
-            <a
-              class="resource-card resource-card--preview"
-              href="#yt-preview"
-              aria-label="Open YouTube embedded preview"
-            >
+            <div class="resource-card resource-card--preview">
               <div class="resource-card-media resource-card-media--video">
                 <span class="resource-chip">Embedded YouTube preview</span>
                 <img
@@ -534,7 +539,7 @@
                   changing the page style.
                 </p>
               </div>
-            </a>
+            </div>
 
             <button
               class="resource-card resource-card--button"
@@ -702,6 +707,9 @@
         const modalTriggers = document.querySelectorAll("[data-modal-target]");
         const modal = document.getElementById("figma-placeholder");
         const modalClose = document.querySelector(".amazon-modal-close");
+        const lightbox = document.getElementById("lightbox-modal");
+        const lightboxImage = lightbox?.querySelector("img");
+        const lightboxClose = lightbox?.querySelector(".close-btn");
 
         if (!header || !searchWrap || !backdrop) return;
 
@@ -739,6 +747,27 @@
           event.preventDefault();
         });
         backdrop.addEventListener("click", closeSearch);
+
+        document.querySelectorAll(".lightbox-trigger img").forEach((img) => {
+          img.addEventListener("click", () => {
+            if (!lightbox || !lightboxImage) return;
+            lightbox.classList.add("active");
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+          });
+        });
+
+        const closeLightbox = () => {
+          if (!lightbox || !lightboxImage) return;
+          lightbox.classList.remove("active");
+          lightboxImage.src = "";
+          lightboxImage.alt = "";
+        };
+
+        lightboxClose?.addEventListener("click", closeLightbox);
+        lightbox?.addEventListener("click", (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
 
         const openModal = () => {
           modal?.classList.add("is-open");
