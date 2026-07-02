@@ -32,7 +32,27 @@
       content="UX case study on designing anti-counterfeiting systems at Amazon across customer, seller, and internal workflows."
     />
 
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preload"
+      href="fonts/AmazonEmber_Rg.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/AmazonEmber_Bd.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/AmazonEmber_He.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <script type="application/ld+json">
       {
@@ -59,63 +79,175 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <a href="#top" class="brand">Jay Hilwig</a>
-        <nav class="nav-links" aria-label="Primary">
+  <body class="case-amazon">
+    <header class="amazon-case-header">
+      <div class="amazon-case-nav" aria-label="Case study navigation">
+        <a
+          href="index.html#work"
+          class="amazon-case-logo"
+          aria-label="Back to Jay Hilwig portfolio"
+        >
+          <img
+            src="public/images/jay_amzn_logo3.svg"
+            alt="Amazon logo by Jay Hilwig"
+            class="amazon-logo-svg"
+          />
+        </a>
+
+        <div class="amazon-case-search-wrap">
+          <form
+            class="amazon-case-search"
+            role="search"
+            action="#search-result"
+          >
+            <label class="sr-only" for="amazon-case-search-input"
+              >Search this case study</label
+            >
+            <span class="amazon-search-filter" aria-hidden="true">All</span>
+            <input
+              id="amazon-case-search-input"
+              class="amazon-search-input"
+              type="search"
+              value="Search results for 'is this real?'"
+              readonly
+              aria-describedby="amazon-search-help"
+            />
+            <button
+              class="amazon-search-button"
+              type="submit"
+              aria-label="Search this case study"
+            >
+              Search
+            </button>
+          </form>
+
+          <div class="amazon-search-panel" id="amazon-search-help">
+            <div class="amazon-keep-shopping">
+              <h2>Keep shopping for</h2>
+              <div
+                class="amazon-product-strip"
+                aria-label="Common high-risk product categories"
+              >
+                <article class="amazon-mini-product">
+                  <img
+                    src="./public/images/counterfeit-charger.webp"
+                    alt="Red charging cables"
+                  />
+                  <div>Phone chargers</div>
+                  <span>Trust signal check</span>
+                </article>
+                <article class="amazon-mini-product">
+                  <img
+                    src="./public/images/counterfeit-shoes.webp"
+                    alt="Green athletic shoe"
+                  />
+                  <div>Running shoes</div>
+                  <span>Authenticity cues</span>
+                </article>
+                <article class="amazon-mini-product">
+                  <img
+                    src="./public/images/counterfeit-skincare.webp"
+                    alt="Blue skincare bottle"
+                  />
+                  <div>Skincare</div>
+                  <span>Packaging confidence</span>
+                </article>
+                <article class="amazon-mini-product">
+                  <img
+                    src="./public/images/counterfeit-toys.webp"
+                    alt="White building block toy"
+                  />
+                  <div>Toy sets</div>
+                  <span>Customer assurance</span>
+                </article>
+                <article class="amazon-mini-product">
+                  <img
+                    src="./public/images/counterfeit-earbuds.webp"
+                    alt="Black wireless earbuds"
+                  />
+                  <div>Wireless earbuds</div>
+                  <span>Verification moment</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="amazon-search-result" id="search-result">
+              <div class="amazon-result-query">
+                Search results for 'is this real?'
+              </div>
+              <a href="#problem" class="amazon-result-card">
+                <span class="amazon-result-count">1 result found</span>
+                <strong>Amazon Transparency</strong>
+                <span>
+                  Helping customers answer that question before it becomes a
+                  return, complaint, or trust problem.
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <nav class="amazon-case-links" aria-label="Portfolio links">
+          <a href="index.html">Portfolio</a>
           <a
             href="https://jhilwig.com/JayHilwig.pdf"
             target="_blank"
             rel="noopener"
-            style="display: inline-flex; align-items: center"
+            >Resume</a
           >
-            <img
-              src="./public/images/PDF_logo.svg"
-              alt="PDF logo"
-              style="height: 1em; vertical-align: middle; margin-right: 0.3em"
-            />
-            Resume
-          </a>
           <a
             href="https://www.linkedin.com/in/jayhilwig/"
             target="_blank"
             rel="noopener"
-            style="display: inline-flex; align-items: center"
+            >LinkedIn</a
           >
-            <img
-              src="./public/images/LinkedIn_logo.svg"
-              alt="LinkedIn logo"
-              style="height: 1em; vertical-align: middle; margin-right: 0.3em"
-            />
-            LinkedIn
-          </a>
         </nav>
       </div>
+
+      <nav class="amazon-case-subnav" aria-label="Case study sections">
+        <a href="#role">Role</a>
+        <a href="#problem">Problem</a>
+        <a href="#research">Research</a>
+        <a href="#design">Design</a>
+        <a href="#impact">Impact</a>
+      </nav>
     </header>
-    <main>
-      <section class="case-hero">
+    <div class="amazon-search-backdrop" aria-hidden="true"></div>
+    <main id="top">
+      <section class="case-hero amazon-retail-hero">
         <div class="container case-hero-grid">
           <div>
-            <div class="kicker">Case study</div>
+            <div class="kicker">Amazon UX case study</div>
             <h1>Amazon Transparency</h1>
             <p class="case-summary">
               Amazon Transparency helps brands reduce counterfeit risk, build
               customer trust, and create a more verifiable product experience
               across the purchase and post-purchase journey.
             </p>
+            <div class="amazon-hero-meta" aria-label="Project details">
+              <span>Senior product design</span>
+              <span>Trust + authentication</span>
+              <span>Customer, seller, and operations UX</span>
+            </div>
           </div>
 
           <div class="case-visual">
-            <img
-              src="public/images/tr3_gpt.png"
-              alt="Amazon Transparency mobile verification experience shown on a phone"
-            />
+            <div class="amazon-product-panel">
+              <div class="amazon-panel-label">Featured case study</div>
+              <img
+                src="public/images/tr3_gpt.png"
+                alt="Amazon Transparency mobile verification experience shown on a phone"
+              />
+              <div class="amazon-panel-caption">
+                Product authenticity signals across shopping and post-purchase
+                flows.
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-metrics">
         <div class="container">
           <div class="stat-grid">
             <div class="stat-card">
@@ -140,7 +272,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf" id="role">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Role + ownership</div>
@@ -192,7 +324,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf" id="problem">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Problem</div>
@@ -214,7 +346,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf" id="research">
         <div class="container">
           <div class="section-head">
             <div class="kicker">Research + discovery</div>
@@ -266,7 +398,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf">
         <div class="container">
           <div class="artifact-grid">
             <div class="artifact-card">
@@ -298,7 +430,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf" id="design">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Design process</div>
@@ -341,7 +473,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf">
         <div class="container">
           <div class="artifact-grid">
             <div class="artifact-card">
@@ -372,7 +504,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Validation + insights</div>
@@ -403,7 +535,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Research tools</div>
@@ -430,7 +562,7 @@
         </div>
       </section>
 
-      <section class="amazon-section">
+      <section class="amazon-section amazon-shelf amazon-impact" id="impact">
         <div class="container case-hero-grid">
           <div>
             <div class="kicker">Impact</div>
@@ -455,5 +587,64 @@
         </div>
       </section>
     </main>
+    <script>
+      (() => {
+        const body = document.body;
+        const header = document.querySelector(".amazon-case-header");
+        const searchWrap = document.querySelector(".amazon-case-search-wrap");
+        const searchForm = document.querySelector(".amazon-case-search");
+        const searchInput = document.querySelector(".amazon-search-input");
+        const searchButton = document.querySelector(".amazon-search-button");
+        const backdrop = document.querySelector(".amazon-search-backdrop");
+
+        if (!header || !searchWrap || !backdrop) return;
+
+        const setHeaderHeight = () => {
+          body.style.setProperty(
+            "--amazon-header-height",
+            `${header.getBoundingClientRect().height}px`,
+          );
+        };
+
+        const openSearch = () => {
+          setHeaderHeight();
+          if (searchInput)
+            searchInput.value =
+              "Good instinct 🕵️ — that's the exact question millions of Amazon shoppers ask — and the one this case study is about.";
+          body.classList.add("is-search-open");
+          searchWrap.classList.add("is-search-open");
+          searchButton?.setAttribute("aria-expanded", "true");
+        };
+
+        const closeSearch = () => {
+          if (searchInput)
+            searchInput.value = "Search results for 'is this real?'";
+          body.classList.remove("is-search-open");
+          searchWrap.classList.remove("is-search-open");
+          searchButton?.setAttribute("aria-expanded", "false");
+        };
+
+        setHeaderHeight();
+        window.addEventListener("resize", setHeaderHeight);
+
+        searchButton?.setAttribute("aria-expanded", "false");
+        searchInput?.addEventListener("click", openSearch);
+        searchForm?.addEventListener("submit", (event) => {
+          event.preventDefault();
+        });
+        backdrop.addEventListener("click", closeSearch);
+
+        document.addEventListener("click", (event) => {
+          if (!body.classList.contains("is-search-open")) return;
+          if (
+            searchWrap.contains(event.target) ||
+            backdrop.contains(event.target)
+          ) {
+            return;
+          }
+          closeSearch();
+        });
+      })();
+    </script>
   </body>
 </html>
