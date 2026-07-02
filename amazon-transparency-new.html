@@ -76,7 +76,405 @@
       }
     </script>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=amazon-pdf-modal-2" />
+
+    <style id="amazon-pdf-modal-force">
+      /* Scoped force-overrides for the Amazon PDF.js modal. Kept in-page so the PDF viewer is not dependent on shared CSS cache/order. */
+      body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 3000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(12px, 2vw, 24px);
+        background: rgba(0, 0, 0, 0.72);
+      }
+
+      body.case-amazon.is-pdf-modal-open {
+        overflow: hidden !important;
+      }
+
+      body.case-amazon
+        #pdf-preview-modal.amazon-modal.amazon-pdf-modal.is-open {
+        display: flex;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel {
+        width: min(96vw, 1180px) !important;
+        max-width: min(96vw, 1180px) !important;
+        height: min(92vh, 820px) !important;
+        max-height: min(92vh, 820px) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        background: #d8d8d8 !important;
+        border: 1px solid rgba(0, 0, 0, 0.5) !important;
+        border-radius: 0 !important;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44) !important;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar {
+        flex: 0 0 auto;
+        min-height: 40px;
+        display: flex !important;
+        flex-flow: row nowrap !important;
+        align-items: center !important;
+        gap: 8px;
+        padding: 6px 10px;
+        background: #eeeeee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        color: #222;
+        font:
+          13px/1 Arial,
+          system-ui,
+          sans-serif;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-group {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+        flex: 1 1 auto;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button,
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-input,
+      body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+        box-sizing: border-box;
+        font: inherit;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button {
+        appearance: none;
+        min-width: 26px;
+        height: 26px;
+        padding: 0 7px;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      body.case-amazon
+        #pdf-preview-modal
+        .amazon-pdf-icon-button:hover:not(:disabled),
+      body.case-amazon
+        #pdf-preview-modal
+        .amazon-pdf-icon-button:focus-visible {
+        background: #fff;
+        border-color: rgba(0, 0, 0, 0.48);
+        outline: none;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button:disabled {
+        color: #9a9a9a;
+        cursor: default;
+        opacity: 0.65;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-input {
+        width: 56px;
+        height: 26px;
+        padding: 0 7px;
+        text-align: right;
+        border: 1px solid rgba(0, 0, 0, 0.34);
+        border-radius: 2px;
+        background: #fff;
+        color: #111;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-count {
+        white-space: nowrap;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+        height: 26px;
+        max-width: 170px;
+        padding: 0 26px 0 7px;
+        border: 1px solid rgba(0, 0, 0, 0.34);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-close {
+        position: static !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 2px !important;
+        background: #f8f8f8 !important;
+        color: #222 !important;
+        font-size: 18px !important;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-viewer {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        padding: 26px;
+        background: #656565;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-shell {
+        width: fit-content;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.72);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-viewer canvas {
+        display: block;
+        max-width: none;
+        height: auto;
+        background: #fff;
+      }
+
+      @media (max-width: 700px) {
+        body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
+          padding: 0;
+        }
+
+        body.case-amazon
+          #pdf-preview-modal
+          .amazon-modal-panel.amazon-pdf-panel {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          height: 100dvh !important;
+          max-height: 100dvh !important;
+          border: 0 !important;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar {
+          flex-wrap: wrap !important;
+          gap: 6px;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+          display: none;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-viewer {
+          padding: 12px;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+          max-width: 140px;
+        }
+      }
+
+      /* Scoped force-overrides for the Amazon Figma prototype modal. Mirrors the PDF viewer footprint but uses a tabbed iframe shell. */
+      body.case-amazon.is-figma-modal-open {
+        overflow: hidden !important;
+      }
+
+      body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2900;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(12px, 2vw, 24px);
+        background: rgba(0, 0, 0, 0.72);
+      }
+
+      body.case-amazon
+        #figma-placeholder.amazon-modal.amazon-figma-modal.is-open {
+        display: flex;
+      }
+
+      body.case-amazon
+        #figma-placeholder
+        .amazon-modal-panel.amazon-figma-panel {
+        width: min(96vw, 1180px) !important;
+        max-width: min(96vw, 1180px) !important;
+        height: min(92vh, 820px) !important;
+        max-height: min(92vh, 820px) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        background: #d8d8d8 !important;
+        border: 1px solid rgba(0, 0, 0, 0.5) !important;
+        border-radius: 0 !important;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44) !important;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-toolbar {
+        flex: 0 0 auto;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        background: #eeeeee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        color: #222;
+        font:
+          13px/1 Arial,
+          system-ui,
+          sans-serif;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tabs {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab,
+      body.case-amazon #figma-placeholder .amazon-figma-close {
+        appearance: none;
+        min-width: 34px;
+        height: 28px;
+        padding: 0 10px;
+        border: 1px solid rgba(0, 0, 0, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+        cursor: pointer;
+        font: inherit;
+        line-height: 1;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab:hover,
+      body.case-amazon #figma-placeholder .amazon-figma-tab:focus-visible,
+      body.case-amazon #figma-placeholder .amazon-figma-close:hover,
+      body.case-amazon #figma-placeholder .amazon-figma-close:focus-visible {
+        background: #fff;
+        border-color: rgba(0, 0, 0, 0.48);
+        outline: none;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab.is-active {
+        background: #232f3e;
+        border-color: #232f3e;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-title {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #333;
+        font-weight: 700;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-toolbar-spacer {
+        flex: 1 1 auto;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-close {
+        width: 28px;
+        min-width: 28px;
+        padding: 0;
+        font-size: 18px;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-viewer {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
+        padding: 26px;
+        background: #656565;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-frame-shell {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.72);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+        overflow: hidden;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-frame-shell iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-notes {
+        flex: 0 0 auto;
+        display: grid;
+        gap: 4px;
+        padding: 12px 16px 14px;
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, 0.16);
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-note-label {
+        color: #b36b00;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-note-text {
+        margin: 0;
+        color: #333;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 700px) {
+        body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
+          padding: 0;
+        }
+
+        body.case-amazon
+          #figma-placeholder
+          .amazon-modal-panel.amazon-figma-panel {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          height: 100dvh !important;
+          max-height: 100dvh !important;
+          border: 0 !important;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-toolbar {
+          flex-wrap: wrap;
+          min-height: auto;
+          gap: 6px;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-title {
+          flex-basis: 100%;
+          order: 3;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-viewer {
+          padding: 12px;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-notes {
+          padding: 10px 12px 12px;
+        }
+      }
+    </style>
   </head>
 
   <body class="case-amazon">
@@ -265,7 +663,7 @@
               <div>Expected growth in Transparency code scans.</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">372</div>
+              <div class="stat-number">350+</div>
               <div>UserTesting sessions across the US, UK, and Germany.</div>
             </div>
           </div>
@@ -386,7 +784,7 @@
                 <div>
                   <div class="title">UserTesting validation</div>
                   <div class="desc">
-                    Ran 366 unmoderated and 6 moderated sessions across the US,
+                    Ran 350+ unmoderated and 6 moderated sessions across the US,
                     UK, and DE to test comprehension, clarity, and the value of
                     Amazon Lens.
                   </div>
@@ -517,26 +915,37 @@
         <div class="container">
           <div class="section-head">
             <div class="kicker">Media + references</div>
-            <h2>Supporting links and working placeholders.</h2>
+            <h2>Research prototypes and artifacts</h2>
           </div>
 
           <div class="resource-grid">
-            <div class="resource-card resource-card--preview">
+            <div
+              class="resource-card resource-card--preview resource-card--video-embed"
+            >
               <div class="resource-card-media resource-card-media--video">
-                <span class="resource-chip">Embedded YouTube preview</span>
-                <img
-                  src="public/images/hero2.svg"
-                  alt="YouTube preview thumbnail"
-                  class="resource-thumb resource-thumb--wide"
-                />
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/Hu71_OuXjec"
+                  title="Amazon Transparency case study video"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
               <div class="resource-card-body">
                 <div class="kicker">Video</div>
-                <h3>Watch the case study preview</h3>
+                <h3>Customer interview highlights</h3>
                 <p class="desc">
-                  This tile is a placeholder for an embedded YouTube player.
-                  I’ve framed it so the final iframe can drop in without
-                  changing the page style.
+                  Edited clips from six customer interviews used to evaluate
+                  Transparency messaging, scan expectations, and
+                  post-authentication value.
                 </p>
               </div>
             </div>
@@ -552,23 +961,23 @@
                   alt="Figma logo"
                   class="resource-thumb resource-thumb--logo"
                 />
-                <span class="resource-chip">Figma launcher</span>
+                <span class="resource-chip">Figma prototype</span>
               </div>
               <div class="resource-card-body">
                 <div class="kicker">Prototype</div>
-                <h3>Open Figma inline later</h3>
+                <h3>Customer-tested prototype flows</h3>
                 <p class="desc">
-                  This is the placeholder launcher for the future Figma popup.
-                  The button will open the separate window you asked for.
+                  Figma prototypes used in roundtables and UserTesting sessions
+                  to evaluate scan entry points, messaging, and
+                  post-authentication experiences.
                 </p>
               </div>
             </button>
 
-            <a
-              class="resource-card"
-              href="public/images/CTP_CX_interviews.pdf"
-              target="_blank"
-              rel="noopener"
+            <button
+              class="resource-card resource-card--button"
+              type="button"
+              data-pdf-src="public/images/CTP_CX_interviews.pdf"
             >
               <div class="resource-card-media resource-card-media--doc">
                 <img
@@ -576,14 +985,18 @@
                   alt="PDF icon"
                   class="resource-thumb resource-thumb--logo"
                 />
-                <span class="resource-chip">PDF reference</span>
+                <span class="resource-chip">PDF preview</span>
               </div>
               <div class="resource-card-body">
                 <div class="kicker">Research</div>
                 <h3>Customer interview notes</h3>
-                <p class="desc">Supporting research material in PDF form.</p>
+                <p class="desc">
+                  Research summary from customer interviews, including key
+                  findings, quotes, and recommendations that shaped the
+                  Transparency scan experience.
+                </p>
               </div>
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -672,29 +1085,194 @@
       </section>
     </main>
 
-    <div class="amazon-modal" id="figma-placeholder" aria-hidden="true">
+    <div
+      class="amazon-modal amazon-figma-modal"
+      id="figma-placeholder"
+      aria-hidden="true"
+    >
       <div
-        class="amazon-modal-panel"
+        class="amazon-modal-panel amazon-figma-panel"
         role="dialog"
         aria-modal="true"
         aria-labelledby="figma-placeholder-title"
       >
-        <button
-          class="amazon-modal-close"
-          type="button"
-          aria-label="Close Figma placeholder"
-        >
-          ×
-        </button>
-        <div class="kicker">Figma placeholder</div>
-        <h3 id="figma-placeholder-title">Launch the Figma preview here</h3>
-        <p class="desc">
-          This popup is ready for a future iframe embed. Use it as the separate
-          window placeholder for Figma.
-        </p>
+        <div class="amazon-figma-toolbar" aria-label="Figma prototype controls">
+          <div
+            class="amazon-figma-tabs"
+            role="tablist"
+            aria-label="Prototype views"
+          >
+            <button
+              class="amazon-figma-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-figma-tab="0"
+            >
+              1
+            </button>
+            <button
+              class="amazon-figma-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-figma-tab="1"
+            >
+              2
+            </button>
+            <button
+              class="amazon-figma-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-figma-tab="2"
+            >
+              3
+            </button>
+          </div>
+          <div
+            class="amazon-figma-title"
+            id="figma-placeholder-title"
+            data-figma-title
+          >
+            Customer touchpoints overview
+          </div>
+          <div class="amazon-figma-toolbar-spacer"></div>
+          <button
+            class="amazon-figma-close"
+            type="button"
+            aria-label="Close Figma preview"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="amazon-figma-viewer">
+          <div class="amazon-figma-frame-shell">
+            <iframe
+              title="Amazon Transparency Figma prototype"
+              src="https://embed.figma.com/proto/dTUaByFBE7UjSTQ1Vo9jRE/Amazon-Customer-Touchpoints?page-id=1390%3A4139&amp;node-id=1390-4715&amp;node-type=section&amp;viewport=779%2C467%2C0.56&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1390%3A4169&amp;embed-host=share"
+              allowfullscreen
+              data-figma-frame
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="amazon-figma-notes" aria-live="polite">
+          <div class="amazon-figma-note-label">Prototype note</div>
+          <p class="amazon-figma-note-text" data-figma-note>
+            Replace this copy with the short context you want visitors to have
+            before exploring this prototype.
+          </p>
+        </div>
       </div>
     </div>
 
+    <div
+      id="lightbox-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
+    >
+      <button class="close-btn" type="button" aria-label="Close image preview">
+        ×
+      </button>
+      <img src="" alt="" />
+    </div>
+
+    <div
+      class="amazon-modal amazon-pdf-modal"
+      id="pdf-preview-modal"
+      aria-hidden="true"
+    >
+      <div
+        class="amazon-modal-panel amazon-pdf-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="PDF preview"
+      >
+        <div class="amazon-pdf-toolbar" aria-label="PDF controls">
+          <div class="amazon-pdf-toolbar-group amazon-pdf-page-controls">
+            <button
+              class="amazon-pdf-icon-button"
+              type="button"
+              data-pdf-prev
+              aria-label="Previous page"
+            >
+              ‹
+            </button>
+            <input
+              class="amazon-pdf-page-input"
+              type="number"
+              min="1"
+              value="1"
+              inputmode="numeric"
+              aria-label="PDF page number"
+              data-pdf-page-input
+            />
+            <span class="amazon-pdf-page-count" data-pdf-page-status>of 1</span>
+            <button
+              class="amazon-pdf-icon-button"
+              type="button"
+              data-pdf-next
+              aria-label="Next page"
+            >
+              ›
+            </button>
+          </div>
+
+          <div class="amazon-pdf-toolbar-spacer"></div>
+
+          <div class="amazon-pdf-toolbar-group">
+            <button
+              class="amazon-pdf-icon-button"
+              type="button"
+              data-pdf-zoom-out
+              aria-label="Zoom out"
+            >
+              −
+            </button>
+            <button
+              class="amazon-pdf-icon-button"
+              type="button"
+              data-pdf-zoom-in
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+            <select
+              class="amazon-pdf-zoom-select"
+              aria-label="PDF zoom level"
+              data-pdf-zoom-select
+            >
+              <option value="auto">Automatic Zoom</option>
+              <option value="1">100%</option>
+              <option value="1.25">125%</option>
+              <option value="1.5">150%</option>
+              <option value="2">200%</option>
+            </select>
+            <button
+              class="amazon-pdf-icon-button amazon-pdf-close"
+              type="button"
+              aria-label="Close PDF preview"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+
+        <div class="amazon-pdf-viewer">
+          <div class="amazon-pdf-page-shell">
+            <canvas aria-label="Rendered PDF page"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      defer
+    ></script>
     <script>
       (() => {
         const body = document.body;
@@ -706,10 +1284,26 @@
         const backdrop = document.querySelector(".amazon-search-backdrop");
         const modalTriggers = document.querySelectorAll("[data-modal-target]");
         const modal = document.getElementById("figma-placeholder");
-        const modalClose = document.querySelector(".amazon-modal-close");
+        const modalClose = modal?.querySelector(".amazon-figma-close");
+        const figmaTabs = modal?.querySelectorAll("[data-figma-tab]") || [];
+        const figmaFrame = modal?.querySelector("[data-figma-frame]");
+        const figmaTitle = modal?.querySelector("[data-figma-title]");
+        const figmaNote = modal?.querySelector("[data-figma-note]");
         const lightbox = document.getElementById("lightbox-modal");
         const lightboxImage = lightbox?.querySelector("img");
         const lightboxClose = lightbox?.querySelector(".close-btn");
+        const pdfTriggers = document.querySelectorAll("[data-pdf-src]");
+        const pdfModal = document.getElementById("pdf-preview-modal");
+        const pdfClose = pdfModal?.querySelector(".amazon-pdf-close");
+        const pdfCanvas = pdfModal?.querySelector("canvas");
+        const pdfViewer = pdfModal?.querySelector(".amazon-pdf-viewer");
+        const pdfPrev = pdfModal?.querySelector("[data-pdf-prev]");
+        const pdfNext = pdfModal?.querySelector("[data-pdf-next]");
+        const pdfStatus = pdfModal?.querySelector("[data-pdf-page-status]");
+        const pdfPageInput = pdfModal?.querySelector("[data-pdf-page-input]");
+        const pdfZoomOut = pdfModal?.querySelector("[data-pdf-zoom-out]");
+        const pdfZoomIn = pdfModal?.querySelector("[data-pdf-zoom-in]");
+        const pdfZoomSelect = pdfModal?.querySelector("[data-pdf-zoom-select]");
 
         if (!header || !searchWrap || !backdrop) return;
 
@@ -748,15 +1342,6 @@
         });
         backdrop.addEventListener("click", closeSearch);
 
-        document.querySelectorAll(".lightbox-trigger img").forEach((img) => {
-          img.addEventListener("click", () => {
-            if (!lightbox || !lightboxImage) return;
-            lightbox.classList.add("active");
-            lightboxImage.src = img.src;
-            lightboxImage.alt = img.alt;
-          });
-        });
-
         const closeLightbox = () => {
           if (!lightbox || !lightboxImage) return;
           lightbox.classList.remove("active");
@@ -764,20 +1349,85 @@
           lightboxImage.alt = "";
         };
 
+        document.querySelectorAll(".lightbox-trigger").forEach((trigger) => {
+          const img = trigger.querySelector("img");
+          if (!img) return;
+
+          trigger.setAttribute("role", "button");
+          trigger.setAttribute("tabindex", "0");
+          trigger.setAttribute("aria-label", img.alt || "Open image preview");
+
+          const openLightbox = () => {
+            if (!lightbox || !lightboxImage) return;
+            lightbox.classList.add("active");
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+          };
+
+          trigger.addEventListener("click", openLightbox);
+          trigger.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox();
+            }
+          });
+        });
+
         lightboxClose?.addEventListener("click", closeLightbox);
         lightbox?.addEventListener("click", (event) => {
           if (event.target === lightbox) closeLightbox();
         });
 
+        const figmaViews = [
+          {
+            title: "Scan entry point",
+            note: "Explored how Transparency could surface inside the Amazon delivery experience, giving customers a clear path to scan the code and verify authenticity directly from the Amazon app.",
+            src: "https://embed.figma.com/proto/dTUaByFBE7UjSTQ1Vo9jRE/Amazon-Customer-Touchpoints?page-id=1390%3A4139&node-id=1390-4169&viewport=509%2C285%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1390%3A4169&embed-host=share",
+          },
+          {
+            title: "UX explorations",
+            note: "A range of interaction and content variations helped the team evaluate how much context customers needed before and after scanning a Transparency code.",
+            src: "https://embed.figma.com/proto/dTUaByFBE7UjSTQ1Vo9jRE/Amazon-Customer-Touchpoints?page-id=0%3A1&node-id=331-202&node-type=frame&viewport=5969%2C1081%2C0.73&scaling=scale-down&content-scaling=responsive&starting-point-node-id=331%3A202&show-proto-sidebar=1&embed-host=share&theme=light",
+          },
+          {
+            title: "Final authenticated experience",
+            note: "The final direction expanded the scan result from a simple authentication message into a richer customer experience with warranty support, auto-enrollment, coupons, and related product opportunities.",
+            src: "https://embed.figma.com/proto/dTUaByFBE7UjSTQ1Vo9jRE/Amazon-Customer-Touchpoints?page-id=1390%3A4139&node-id=1390-4715&node-type=section&viewport=779%2C467%2C0.56&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1390%3A4169&embed-host=share",
+          },
+        ];
+
+        const setFigmaView = (index) => {
+          const view = figmaViews[index] || figmaViews[0];
+          if (figmaFrame && figmaFrame.src !== view.src)
+            figmaFrame.src = view.src;
+          if (figmaTitle) figmaTitle.textContent = view.title;
+          if (figmaNote) figmaNote.textContent = view.note;
+
+          figmaTabs.forEach((tab, tabIndex) => {
+            const isActive = tabIndex === index;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+          });
+        };
+
         const openModal = () => {
+          body.classList.add("is-figma-modal-open");
+          setFigmaView(0);
           modal?.classList.add("is-open");
           modal?.setAttribute("aria-hidden", "false");
         };
 
         const closeModal = () => {
+          body.classList.remove("is-figma-modal-open");
           modal?.classList.remove("is-open");
           modal?.setAttribute("aria-hidden", "true");
         };
+
+        figmaTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            setFigmaView(Number(tab.dataset.figmaTab) || 0);
+          });
+        });
 
         modalTriggers.forEach((trigger) => {
           trigger.addEventListener("click", openModal);
@@ -786,6 +1436,212 @@
         modalClose?.addEventListener("click", closeModal);
         modal?.addEventListener("click", (event) => {
           if (event.target === modal) closeModal();
+        });
+
+        let pdfDoc = null;
+        let pdfPageNumber = 1;
+        let pdfZoomMode = "auto";
+        let pdfZoomScale = 1;
+        let pdfIsRendering = false;
+        let pdfPendingPage = null;
+        let pdfWheelLock = false;
+
+        const updatePdfStatus = () => {
+          if (!pdfStatus || !pdfDoc) return;
+          pdfStatus.textContent = `of ${pdfDoc.numPages}`;
+          if (pdfPageInput) {
+            pdfPageInput.max = String(pdfDoc.numPages);
+            pdfPageInput.value = String(pdfPageNumber);
+          }
+          if (pdfPrev) pdfPrev.disabled = pdfPageNumber <= 1;
+          if (pdfNext) pdfNext.disabled = pdfPageNumber >= pdfDoc.numPages;
+        };
+
+        const getPdfScale = (baseViewport) => {
+          if (pdfZoomMode !== "auto") return pdfZoomScale;
+
+          const viewerStyles = pdfViewer ? getComputedStyle(pdfViewer) : null;
+          const viewerPaddingX = viewerStyles
+            ? parseFloat(viewerStyles.paddingLeft) +
+              parseFloat(viewerStyles.paddingRight)
+            : 52;
+          const availableWidth = Math.max(
+            240,
+            (pdfViewer?.clientWidth || 900) - viewerPaddingX - 6,
+          );
+
+          return Math.min(availableWidth / baseViewport.width, 1.5);
+        };
+
+        const renderPdfPage = async (pageNumber) => {
+          if (!pdfDoc || !pdfCanvas) return;
+
+          if (pdfIsRendering) {
+            pdfPendingPage = pageNumber;
+            return;
+          }
+
+          pdfIsRendering = true;
+          const page = await pdfDoc.getPage(pageNumber);
+          const baseViewport = page.getViewport({ scale: 1 });
+          const viewport = page.getViewport({
+            scale: getPdfScale(baseViewport),
+          });
+          const context = pdfCanvas.getContext("2d");
+
+          pdfCanvas.width = viewport.width;
+          pdfCanvas.height = viewport.height;
+
+          await page.render({ canvasContext: context, viewport }).promise;
+          if (pdfViewer) pdfViewer.scrollTop = 0;
+          pdfIsRendering = false;
+          updatePdfStatus();
+
+          if (pdfPendingPage) {
+            const nextPage = pdfPendingPage;
+            pdfPendingPage = null;
+            await renderPdfPage(nextPage);
+          }
+        };
+
+        const goToPdfPage = async (pageNumber) => {
+          if (!pdfDoc) return;
+          pdfPageNumber = Math.min(Math.max(pageNumber, 1), pdfDoc.numPages);
+          updatePdfStatus();
+          await renderPdfPage(pdfPageNumber);
+        };
+
+        const setPdfZoom = async (value) => {
+          pdfZoomMode = value;
+          if (value !== "auto") pdfZoomScale = Number(value);
+          if (pdfZoomSelect) pdfZoomSelect.value = value;
+          await renderPdfPage(pdfPageNumber);
+        };
+
+        const openPdfModal = async (src) => {
+          if (!pdfModal || !pdfCanvas || !window.pdfjsLib) return;
+
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+          body.classList.add("is-pdf-modal-open");
+          pdfModal.classList.add("is-open");
+          pdfModal.setAttribute("aria-hidden", "false");
+          pdfPageNumber = 1;
+          pdfZoomMode = "auto";
+          pdfZoomScale = 1;
+          if (pdfStatus) pdfStatus.textContent = "Loading…";
+          if (pdfPageInput) pdfPageInput.value = "1";
+          if (pdfZoomSelect) pdfZoomSelect.value = "auto";
+          pdfDoc = await window.pdfjsLib.getDocument(src).promise;
+          updatePdfStatus();
+          await renderPdfPage(pdfPageNumber);
+        };
+
+        const closePdfModal = () => {
+          body.classList.remove("is-pdf-modal-open");
+          pdfModal?.classList.remove("is-open");
+          pdfModal?.setAttribute("aria-hidden", "true");
+          pdfDoc = null;
+          pdfPageNumber = 1;
+          if (pdfCanvas) {
+            const context = pdfCanvas.getContext("2d");
+            context.clearRect(0, 0, pdfCanvas.width, pdfCanvas.height);
+          }
+        };
+
+        pdfTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            openPdfModal(trigger.dataset.pdfSrc);
+          });
+        });
+
+        pdfPrev?.addEventListener("click", () => {
+          goToPdfPage(pdfPageNumber - 1);
+        });
+
+        pdfNext?.addEventListener("click", () => {
+          goToPdfPage(pdfPageNumber + 1);
+        });
+
+        pdfPageInput?.addEventListener("change", () => {
+          goToPdfPage(Number(pdfPageInput.value) || 1);
+        });
+
+        pdfZoomOut?.addEventListener("click", () => {
+          const currentScale = pdfZoomMode === "auto" ? 1 : pdfZoomScale;
+          const nextScale = Math.max(0.5, currentScale - 0.25);
+          setPdfZoom(String(nextScale));
+        });
+
+        pdfZoomIn?.addEventListener("click", () => {
+          const currentScale = pdfZoomMode === "auto" ? 1 : pdfZoomScale;
+          const nextScale = Math.min(2, currentScale + 0.25);
+          setPdfZoom(String(nextScale));
+        });
+
+        pdfZoomSelect?.addEventListener("change", () => {
+          setPdfZoom(pdfZoomSelect.value);
+        });
+
+        pdfViewer?.addEventListener(
+          "wheel",
+          (event) => {
+            if (!pdfDoc || pdfIsRendering) return;
+
+            const canScrollInside =
+              pdfViewer.scrollHeight > pdfViewer.clientHeight + 2;
+            const atTop = pdfViewer.scrollTop <= 1;
+            const atBottom =
+              pdfViewer.scrollTop + pdfViewer.clientHeight >=
+              pdfViewer.scrollHeight - 2;
+
+            if (canScrollInside && event.deltaY > 0 && !atBottom) return;
+            if (canScrollInside && event.deltaY < 0 && !atTop) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (pdfWheelLock) return;
+            pdfWheelLock = true;
+            window.setTimeout(() => {
+              pdfWheelLock = false;
+            }, 420);
+
+            if (event.deltaY > 0 && pdfPageNumber < pdfDoc.numPages) {
+              goToPdfPage(pdfPageNumber + 1);
+            } else if (event.deltaY < 0 && pdfPageNumber > 1) {
+              goToPdfPage(pdfPageNumber - 1);
+            }
+          },
+          { passive: false },
+        );
+
+        window.addEventListener("resize", () => {
+          if (
+            pdfModal?.classList.contains("is-open") &&
+            pdfZoomMode === "auto"
+          ) {
+            renderPdfPage(pdfPageNumber);
+          }
+        });
+
+        pdfClose?.addEventListener("click", closePdfModal);
+        pdfModal?.addEventListener("click", (event) => {
+          if (event.target === pdfModal) closePdfModal();
+        });
+
+        window.addEventListener("resize", () => {
+          if (pdfModal?.classList.contains("is-open") && pdfDoc) {
+            renderPdfPage(pdfPageNumber);
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Escape") return;
+          closeLightbox();
+          closeModal();
+          closePdfModal();
         });
 
         document.addEventListener("click", (event) => {

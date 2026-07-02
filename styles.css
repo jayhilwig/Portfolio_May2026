@@ -2433,6 +2433,9 @@ main,
   color: var(--amazon-muted);
 }
 
+blockquote {
+  font-style: italic;
+}
 .case-amazon .table {
   border-top: 1px solid var(--amazon-border);
 }
@@ -2646,5 +2649,38 @@ main,
 
   .case-amazon .artifact-card img {
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* Amazon case study lightbox polish: scoped so homepage lightbox stays unchanged. */
+.case-amazon .lightbox-trigger {
+  cursor: pointer;
+}
+
+.case-amazon .lightbox-trigger:focus-visible {
+  outline: 3px solid var(--amazon-orange);
+  outline-offset: 4px;
+}
+
+.case-amazon #lightbox-modal {
+  padding: 24px;
+  z-index: 2000;
+}
+
+.case-amazon #lightbox-modal img {
+  max-width: min(92vw, 1600px);
+  max-height: 88vh;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .case-amazon #lightbox-modal {
+    padding: 14px;
+  }
+
+  .case-amazon #lightbox-modal img {
+    max-width: 96vw;
+    max-height: 82vh;
   }
 }
