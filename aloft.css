@@ -1,0 +1,723 @@
+/* Aloft Appraisal case study */
+body.case-aloft {
+  --aloft-ink: #071b33;
+  --aloft-muted: #51677d;
+  --aloft-soft: #f4f7fb;
+  --aloft-panel: #ffffff;
+  --aloft-line: #d8e0ea;
+  --aloft-line-strong: #b9c7d8;
+  --aloft-blue: #3652e5;
+  --aloft-blue-dark: #173ebd;
+  --aloft-cyan: #087bb4;
+  --aloft-pink: #d36ba5;
+  --aloft-shadow: 0 18px 48px rgba(22, 48, 83, 0.12);
+  --aloft-radius: 7px;
+  background: var(--aloft-soft);
+  color: var(--aloft-ink);
+  font-family: Lato, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.case-aloft.is-lightbox-open {
+  overflow: hidden;
+}
+
+.case-aloft h1,
+.case-aloft h2,
+.case-aloft h3,
+.case-aloft .kicker,
+.case-aloft .title,
+.case-aloft .stat-number,
+.case-aloft .cta {
+  font-family: Lato, Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.case-aloft main,
+.case-aloft #top {
+  padding-top: 0 !important;
+  background: var(--aloft-soft);
+}
+
+.case-aloft .container {
+  width: min(calc(100% - 36px), 1180px);
+}
+
+.case-aloft [id] {
+  scroll-margin-top: 112px;
+}
+
+.aloft-shell-header {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--aloft-line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.aloft-appbar {
+  width: min(calc(100% - 28px), 1440px);
+  min-height: 58px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.aloft-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: var(--aloft-ink);
+  text-decoration: none;
+}
+
+.aloft-brand:hover {
+  text-decoration: none;
+}
+
+.aloft-brand strong {
+  display: inline-block;
+  font-size: 1.02rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.aloft-brand span span {
+  margin-left: 4px;
+  color: var(--aloft-muted);
+}
+
+.aloft-mark {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.aloft-mark svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.aloft-portfolio-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.aloft-portfolio-links a {
+  color: var(--aloft-muted);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.aloft-portfolio-links a:hover,
+.aloft-portfolio-links a:focus-visible {
+  color: var(--aloft-blue-dark);
+  text-decoration: none;
+}
+
+.aloft-case-subnav {
+  min-height: 38px;
+  width: min(calc(100% - 28px), 1440px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border-top: 1px solid var(--aloft-line);
+  scrollbar-width: none;
+}
+
+.aloft-case-subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.aloft-case-subnav a {
+  color: var(--aloft-ink);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.aloft-case-subnav a:hover,
+.aloft-case-subnav a:focus-visible {
+  color: var(--aloft-blue-dark);
+  text-decoration: none;
+}
+
+.aloft-hero {
+  overflow: hidden;
+  padding: clamp(34px, 6vw, 72px) 0 clamp(30px, 5vw, 58px);
+  background:
+    radial-gradient(
+      circle at 70% 12%,
+      rgba(54, 82, 229, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #eef4fb 100%);
+  border-bottom: 1px solid var(--aloft-line);
+}
+
+.aloft-page-grid {
+  width: min(calc(100% - 36px), 1440px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.66fr) minmax(0, 1.34fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.aloft-hero-copy {
+  min-width: 0;
+}
+
+.case-aloft .kicker {
+  color: var(--aloft-blue);
+}
+
+.case-aloft h1 {
+  max-width: 9ch;
+  color: var(--aloft-ink);
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+.case-aloft h2 {
+  max-width: 13ch;
+  color: var(--aloft-ink);
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.case-aloft h3 {
+  margin: 0 0 10px;
+  color: var(--aloft-ink);
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  line-height: 1.1;
+}
+
+.case-aloft .case-summary {
+  max-width: 40rem;
+  margin: 24px 0 0;
+  color: var(--aloft-muted);
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  line-height: 1.58;
+}
+
+.aloft-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.aloft-hero-actions span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 11px;
+  border: 1px solid var(--aloft-line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--aloft-muted);
+  font-weight: 700;
+}
+
+.aloft-product-stage {
+  position: relative;
+  min-width: 0;
+}
+
+.aloft-window {
+  overflow: hidden;
+  border: 1px solid var(--aloft-line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: var(--aloft-shadow);
+}
+
+.aloft-window-chrome {
+  min-height: 42px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--aloft-line);
+  background: #fff;
+  color: var(--aloft-muted);
+}
+
+.aloft-window-chrome span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #c8d4e3;
+}
+
+.aloft-window-chrome span:first-child {
+  background: var(--aloft-blue);
+}
+
+.aloft-window-chrome strong {
+  margin-left: 6px;
+  color: var(--aloft-ink);
+  font-size: 0.88rem;
+}
+
+.aloft-window img {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.aloft-floating-card {
+  position: absolute;
+  width: min(210px, 32vw);
+  padding: 12px 14px;
+  border: 1px solid var(--aloft-line);
+  border-radius: var(--aloft-radius);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 34px rgba(22, 48, 83, 0.16);
+}
+
+.aloft-floating-card strong,
+.aloft-floating-card span {
+  display: block;
+}
+
+.aloft-floating-card strong {
+  color: var(--aloft-muted);
+  font-size: 0.8rem;
+}
+
+.aloft-floating-card span {
+  color: var(--aloft-ink);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.aloft-floating-card--left {
+  left: -18px;
+  bottom: 26px;
+}
+
+.aloft-floating-card--right {
+  right: -14px;
+  top: 64px;
+}
+
+.aloft-metrics {
+  padding: clamp(24px, 4vw, 44px) 0 0;
+}
+
+.case-aloft .stat-grid {
+  gap: 12px;
+}
+
+.case-aloft .stat-card {
+  min-height: 154px;
+  padding: 20px;
+  border: 1px solid var(--aloft-line);
+  border-radius: var(--aloft-radius);
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(22, 48, 83, 0.04);
+}
+
+.case-aloft .stat-number {
+  color: var(--aloft-blue);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 800;
+}
+
+.case-aloft .stat-card p {
+  margin: 0;
+  color: var(--aloft-muted);
+}
+
+.aloft-section {
+  padding: clamp(54px, 7vw, 96px) 0;
+}
+
+.aloft-section + .aloft-section {
+  border-top: 1px solid var(--aloft-line);
+}
+
+.case-aloft .lead {
+  color: var(--aloft-ink);
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  line-height: 1.42;
+}
+
+.case-aloft .desc,
+.case-aloft .meta {
+  color: var(--aloft-muted);
+}
+
+.aloft-blueprint {
+  background: #fff;
+}
+
+.aloft-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.aloft-info-panel {
+  padding: 22px;
+  border: 1px solid var(--aloft-line);
+  border-radius: var(--aloft-radius);
+  background: linear-gradient(180deg, #fff, #f8fbff);
+}
+
+.aloft-info-panel span {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--aloft-blue);
+  font-weight: 800;
+}
+
+.aloft-info-panel p {
+  margin: 0;
+  color: var(--aloft-muted);
+}
+
+.case-aloft .section-head {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.case-aloft .section-head h2 {
+  max-width: 15ch;
+}
+
+.aloft-artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.aloft-artifact-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--aloft-line);
+  border-radius: var(--aloft-radius);
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(22, 48, 83, 0.04);
+}
+
+.aloft-artifact-card--wide {
+  grid-column: 1 / -1;
+}
+
+.aloft-artifact-card p {
+  max-width: 58rem;
+  margin: 0;
+  color: var(--aloft-muted);
+}
+
+.aloft-image-button {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--aloft-line);
+  border-radius: 6px;
+  background: #f8fafc;
+  cursor: zoom-in;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+
+.aloft-image-button img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: top left;
+  background: #fff;
+  transition: transform 0.18s ease;
+}
+
+.aloft-artifact-card--wide .aloft-image-button img {
+  max-height: none;
+}
+
+.aloft-image-button:hover img,
+.aloft-image-button:focus-visible img {
+  transform: scale(1.01);
+}
+
+.aloft-image-button:focus-visible {
+  outline: 3px solid rgba(54, 82, 229, 0.34);
+  outline-offset: 3px;
+}
+
+.aloft-workflow {
+  background: #fff;
+}
+
+.case-aloft .table {
+  border-top: 1px solid var(--aloft-line);
+}
+
+.case-aloft .row {
+  border-bottom: 1px solid var(--aloft-line);
+}
+
+.case-aloft .title {
+  color: var(--aloft-ink);
+}
+
+.case-aloft .meta {
+  color: var(--aloft-blue);
+  font-weight: 800;
+}
+
+.aloft-research {
+  background:
+    linear-gradient(90deg, rgba(54, 82, 229, 0.08), transparent 42%),
+    var(--aloft-soft);
+}
+
+.case-aloft .quote-panel,
+.aloft-insight-list {
+  gap: 12px;
+}
+
+.case-aloft .quote-panel blockquote {
+  max-width: none;
+  padding: 18px 20px;
+  border-left: 4px solid var(--aloft-blue);
+  border-radius: 0 var(--aloft-radius) var(--aloft-radius) 0;
+  background: #fff;
+  color: var(--aloft-ink);
+  font-size: clamp(1.08rem, 2vw, 1.45rem);
+  line-height: 1.28;
+  box-shadow: 0 1px 1px rgba(22, 48, 83, 0.04);
+}
+
+.aloft-insight-list {
+  display: grid;
+  margin-top: 18px;
+}
+
+.aloft-insight {
+  padding: 18px 20px;
+  border-left: 4px solid var(--aloft-blue);
+  border-radius: 0 var(--aloft-radius) var(--aloft-radius) 0;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(22, 48, 83, 0.04);
+}
+
+.aloft-insight strong,
+.aloft-insight span {
+  display: block;
+}
+
+.aloft-insight strong {
+  margin-bottom: 6px;
+  color: var(--aloft-ink);
+  font-size: 1.02rem;
+}
+
+.aloft-insight span {
+  color: var(--aloft-muted);
+}
+
+.aloft-impact {
+  background: var(--aloft-ink);
+  color: #fff;
+}
+
+.aloft-impact h2,
+.aloft-impact .lead {
+  color: #fff;
+}
+
+.aloft-impact .desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.case-aloft .cta {
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--aloft-ink);
+  font-weight: 800;
+}
+
+.case-aloft .cta:hover {
+  color: var(--aloft-blue-dark);
+  text-decoration: none;
+}
+
+.case-aloft .circle {
+  background: var(--aloft-blue);
+  color: #fff;
+}
+
+.case-aloft #lightbox-modal {
+  background: rgba(5, 18, 34, 0.82);
+}
+
+.case-aloft #lightbox-modal img {
+  max-width: min(94vw, 1680px);
+  max-height: 88vh;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+.case-aloft #lightbox-modal .close-btn:focus-visible {
+  outline-color: var(--aloft-blue);
+}
+
+@media (max-width: 1080px) {
+  .aloft-appbar {
+    gap: 18px;
+    padding: 10px 0;
+  }
+
+  .aloft-page-grid,
+  .aloft-panel-grid,
+  .case-aloft .section-head {
+    grid-template-columns: 1fr;
+  }
+
+  .aloft-page-grid {
+    align-items: start;
+  }
+
+  .aloft-product-stage {
+    order: -1;
+  }
+
+  .case-aloft h1 {
+    max-width: 10ch;
+  }
+
+  .aloft-floating-card {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .case-aloft .container,
+  .aloft-page-grid,
+  .aloft-appbar {
+    width: min(calc(100% - 22px), 1180px);
+  }
+
+  .aloft-brand {
+    min-width: 0;
+  }
+
+  .aloft-brand span span {
+    display: none;
+  }
+
+  .aloft-portfolio-links {
+    gap: 12px;
+    font-size: 0.84rem;
+  }
+
+  .aloft-case-subnav {
+    width: min(calc(100% - 22px), 1180px);
+    gap: 16px;
+    font-size: 0.86rem;
+  }
+
+  .aloft-hero {
+    padding-top: 24px;
+  }
+
+  .case-aloft h1 {
+    font-size: clamp(2.7rem, 15vw, 4.4rem);
+  }
+
+  .case-aloft h2 {
+    max-width: none;
+  }
+
+  .aloft-window-chrome strong {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .aloft-hero-actions span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .case-aloft .stat-grid,
+  .aloft-artifact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aloft-artifact-card--wide {
+    grid-column: auto;
+  }
+
+  .aloft-artifact-card,
+  .aloft-info-panel,
+  .case-aloft .stat-card {
+    padding: 16px;
+  }
+
+  .aloft-image-button img {
+    max-height: 420px;
+  }
+
+  .case-aloft .row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-aloft .meta {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 460px) {
+  .aloft-portfolio-links a:nth-child(2) {
+    display: none;
+  }
+
+  .aloft-window-chrome {
+    min-height: 36px;
+    padding: 0 10px;
+  }
+
+  .aloft-window-chrome span {
+    width: 7px;
+    height: 7px;
+  }
+
+  .aloft-artifact-card h3 {
+    font-size: 1.3rem;
+  }
+}
