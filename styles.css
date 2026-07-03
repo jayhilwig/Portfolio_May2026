@@ -2280,8 +2280,8 @@ main,
   margin: 0;
   padding: clamp(28px, 5vw, 64px) 0 24px;
   background:
-    linear-gradient(180deg, rgba(19, 25, 33, 0.2), var(--amazon-page) 84%),
-    linear-gradient(120deg, #22384a 0%, #3d5d69 45%, #f3d09a 100%);
+    linear-gradient(180deg, rgba(19, 25, 33, 0.22), var(--amazon-page) 96%),
+    linear-gradient(120deg, #1f3344 0%, #42636e 48%, #b9a983 100%);
 }
 
 .case-amazon .case-hero-grid {
@@ -2557,6 +2557,10 @@ blockquote {
 @media (max-width: 640px) {
   .case-amazon .container {
     width: min(calc(100% - 20px), 1180px);
+  }
+
+  .case-amazon .resource-grid {
+    grid-template-columns: 1fr;
   }
 
   .amazon-case-nav {

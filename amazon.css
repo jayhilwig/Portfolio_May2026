@@ -1,0 +1,398 @@
+/* Amazon case study-only overrides.
+   Loaded after styles.css and scoped to body.case-amazon so the homepage is untouched. */
+
+/* Scoped force-overrides for the Amazon PDF.js modal. Kept in-page so the PDF viewer is not dependent on shared CSS cache/order. */
+      body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 3000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(12px, 2vw, 24px);
+        background: rgba(0, 0, 0, 0.72);
+      }
+
+      body.case-amazon.is-pdf-modal-open {
+        overflow: hidden !important;
+      }
+
+      body.case-amazon
+        #pdf-preview-modal.amazon-modal.amazon-pdf-modal.is-open {
+        display: flex;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel {
+        width: min(96vw, 1180px) !important;
+        max-width: min(96vw, 1180px) !important;
+        height: min(92vh, 820px) !important;
+        max-height: min(92vh, 820px) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        background: #d8d8d8 !important;
+        border: 1px solid rgba(0, 0, 0, 0.5) !important;
+        border-radius: 0 !important;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44) !important;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar {
+        flex: 0 0 auto;
+        min-height: 40px;
+        display: flex !important;
+        flex-flow: row nowrap !important;
+        align-items: center !important;
+        gap: 8px;
+        padding: 6px 10px;
+        background: #eeeeee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        color: #222;
+        font:
+          13px/1 Arial,
+          system-ui,
+          sans-serif;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-group {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+        flex: 1 1 auto;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button,
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-input,
+      body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+        box-sizing: border-box;
+        font: inherit;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button {
+        appearance: none;
+        min-width: 26px;
+        height: 26px;
+        padding: 0 7px;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      body.case-amazon
+        #pdf-preview-modal
+        .amazon-pdf-icon-button:hover:not(:disabled),
+      body.case-amazon
+        #pdf-preview-modal
+        .amazon-pdf-icon-button:focus-visible {
+        background: #fff;
+        border-color: rgba(0, 0, 0, 0.48);
+        outline: none;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-icon-button:disabled {
+        color: #9a9a9a;
+        cursor: default;
+        opacity: 0.65;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-input {
+        width: 56px;
+        height: 26px;
+        padding: 0 7px;
+        text-align: right;
+        border: 1px solid rgba(0, 0, 0, 0.34);
+        border-radius: 2px;
+        background: #fff;
+        color: #111;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-count {
+        white-space: nowrap;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+        height: 26px;
+        max-width: 170px;
+        padding: 0 26px 0 7px;
+        border: 1px solid rgba(0, 0, 0, 0.34);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-close {
+        position: static !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 2px !important;
+        background: #f8f8f8 !important;
+        color: #222 !important;
+        font-size: 18px !important;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-viewer {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        padding: 26px;
+        background: #656565;
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-page-shell {
+        width: fit-content;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.72);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+      }
+
+      body.case-amazon #pdf-preview-modal .amazon-pdf-viewer canvas {
+        display: block;
+        max-width: none;
+        height: auto;
+        background: #fff;
+      }
+
+      @media (max-width: 700px) {
+        body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
+          padding: 0;
+        }
+
+        body.case-amazon
+          #pdf-preview-modal
+          .amazon-modal-panel.amazon-pdf-panel {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          height: 100dvh !important;
+          max-height: 100dvh !important;
+          border: 0 !important;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar {
+          flex-wrap: wrap !important;
+          gap: 6px;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+          display: none;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-viewer {
+          padding: 12px;
+        }
+
+        body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+          max-width: 140px;
+        }
+      }
+
+      /* Scoped force-overrides for the Amazon Figma prototype modal. Mirrors the PDF viewer footprint but uses a tabbed iframe shell. */
+      body.case-amazon.is-figma-modal-open {
+        overflow: hidden !important;
+      }
+
+      body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2900;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(12px, 2vw, 24px);
+        background: rgba(0, 0, 0, 0.72);
+      }
+
+      body.case-amazon
+        #figma-placeholder.amazon-modal.amazon-figma-modal.is-open {
+        display: flex;
+      }
+
+      body.case-amazon
+        #figma-placeholder
+        .amazon-modal-panel.amazon-figma-panel {
+        width: min(96vw, 1180px) !important;
+        max-width: min(96vw, 1180px) !important;
+        height: min(92vh, 820px) !important;
+        max-height: min(92vh, 820px) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        background: #d8d8d8 !important;
+        border: 1px solid rgba(0, 0, 0, 0.5) !important;
+        border-radius: 0 !important;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44) !important;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-toolbar {
+        flex: 0 0 auto;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        background: #eeeeee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        color: #222;
+        font:
+          13px/1 Arial,
+          system-ui,
+          sans-serif;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tabs {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab,
+      body.case-amazon #figma-placeholder .amazon-figma-close {
+        appearance: none;
+        min-width: 34px;
+        height: 28px;
+        padding: 0 10px;
+        border: 1px solid rgba(0, 0, 0, 0.28);
+        border-radius: 2px;
+        background: #f8f8f8;
+        color: #222;
+        cursor: pointer;
+        font: inherit;
+        line-height: 1;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab:hover,
+      body.case-amazon #figma-placeholder .amazon-figma-tab:focus-visible,
+      body.case-amazon #figma-placeholder .amazon-figma-close:hover,
+      body.case-amazon #figma-placeholder .amazon-figma-close:focus-visible {
+        background: #fff;
+        border-color: rgba(0, 0, 0, 0.48);
+        outline: none;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-tab.is-active {
+        background: #232f3e;
+        border-color: #232f3e;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-title {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #333;
+        font-weight: 700;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-toolbar-spacer {
+        flex: 1 1 auto;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-close {
+        width: 28px;
+        min-width: 28px;
+        padding: 0;
+        font-size: 18px;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-viewer {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
+        padding: 26px;
+        background: #656565;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-frame-shell {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.72);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+        overflow: hidden;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-frame-shell iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-notes {
+        flex: 0 0 auto;
+        display: grid;
+        gap: 4px;
+        padding: 12px 16px 14px;
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, 0.16);
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-note-label {
+        color: #b36b00;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      body.case-amazon #figma-placeholder .amazon-figma-note-text {
+        margin: 0;
+        color: #333;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 700px) {
+        body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
+          padding: 0;
+        }
+
+        body.case-amazon
+          #figma-placeholder
+          .amazon-modal-panel.amazon-figma-panel {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          height: 100dvh !important;
+          max-height: 100dvh !important;
+          border: 0 !important;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-toolbar {
+          flex-wrap: wrap;
+          min-height: auto;
+          gap: 6px;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-title {
+          flex-basis: 100%;
+          order: 3;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-viewer {
+          padding: 12px;
+        }
+
+        body.case-amazon #figma-placeholder .amazon-figma-notes {
+          padding: 10px 12px 12px;
+        }
+      }
