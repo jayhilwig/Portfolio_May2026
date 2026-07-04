@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -94,7 +93,6 @@
         "sameAs": ["https://www.linkedin.com/in/jayhilwig/"]
       }
     </script>
-   
   </head>
   <body>
     <header class="site-header">
@@ -301,7 +299,7 @@
                     </svg>
                   </span>
                   <span>View case study</span>
-                </a> 
+                </a>
               </div>
             </div>
           </div>
@@ -388,7 +386,6 @@
                   <div class="project-meta">Workflow automation</div>
                 </article>
 
-
                 <a
                   class="case-study-link"
                   href="aloft-appraisal.html"
@@ -404,7 +401,6 @@
                   </span>
                   <span>View case study</span>
                 </a>
-
               </div>
             </div>
           </div>
@@ -539,7 +535,6 @@
           <div class="tf-tab-scroll" aria-label="Technology categories">
             <div
               class="tf-tabs"
-              role="tablist"
               aria-label="Technology categories"
               id="categoryTabs"
             ></div>
@@ -781,6 +776,7 @@
                   <div class="ai-experiment-status">Recent GitHub activity</div>
                   <h4 id="build-activity-title">
                     Still building and shipping on GitHub.
+                  </h4>
                 </div>
 
                 <div class="github-activity-card">
@@ -814,6 +810,7 @@
                 <div class="ai-experiment-media">
                   <button
                     class="lightbox-trigger"
+                    type="button"
                     style="
                       border: none;
                       background: none;
@@ -848,30 +845,29 @@
                     <span>CSS injection</span>
                     <span>UX utility</span>
                   </div>
-                                  <a
-  class="case-study-link"
-  href="https://chromewebstore.google.com/detail/amoobjnpdfokeheiodamnnbncjnjcehm"
-  target="_blank"
-  rel="noopener"
-  aria-label="View Hide Chatbot & Chat Bubbles on the Chrome Web Store"
->
-  <span class="arrow-mark" aria-hidden="true">
-    <svg viewBox="0 0 32 32" role="img" focusable="false">
-      <path
-        d="M8 7H25V24H19.6V16.2L10.8 25L7 21.2L15.8 12.4H8V7Z"
-        fill="white"
-      />
-    </svg>
-  </span>
-  <span>View Chrome Extension</span>
-</a>
+                  <a
+                    class="case-study-link"
+                    href="https://chromewebstore.google.com/detail/amoobjnpdfokeheiodamnnbncjnjcehm"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="View Hide Chatbot & Chat Bubbles on the Chrome Web Store"
+                  >
+                    <span class="arrow-mark" aria-hidden="true">
+                      <svg viewBox="0 0 32 32" role="img" focusable="false">
+                        <path
+                          d="M8 7H25V24H19.6V16.2L10.8 25L7 21.2L15.8 12.4H8V7Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                    <span>View Chrome Extension</span>
+                  </a>
                 </div>
-
-
 
                 <div class="ai-experiment-media">
                   <button
                     class="lightbox-trigger"
+                    type="button"
                     style="
                       border: none;
                       background: none;
@@ -886,21 +882,6 @@
                       style="display: block"
                     />
                   </button>
-                  <div
-                    id="lightbox-modal"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-label="Image preview"
-                  >
-                    <span
-                      class="close-btn"
-                      aria-label="Close modal"
-                      tabindex="0"
-                      >&times;</span
-                    >
-                    <img src="" alt="" />
-                  </div>
-
                 </div>
               </article>
 
@@ -928,6 +909,7 @@
                 <div class="ai-experiment-media">
                   <button
                     class="lightbox-trigger"
+                    type="button"
                     style="
                       border: none;
                       background: none;
@@ -969,6 +951,7 @@
                 <div class="ai-experiment-media">
                   <button
                     class="lightbox-trigger"
+                    type="button"
                     style="
                       border: none;
                       background: none;
@@ -1012,6 +995,7 @@
                 <div class="ai-experiment-media">
                   <button
                     class="lightbox-trigger"
+                    type="button"
                     style="
                       border: none;
                       background: none;
@@ -1331,6 +1315,20 @@
         </div>
       </section>
     </main>
+
+    <div
+      id="lightbox-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="Image preview"
+    >
+      <button class="close-btn" type="button" aria-label="Close image preview">
+        &times;
+      </button>
+      <img src="" alt="" />
+    </div>
+
     <script>
       const scrollTargets = new Set(["#work", "#ai-work", "#cv"]);
 
@@ -1366,7 +1364,7 @@
         const modalImg = modal.querySelector("img");
         const closeBtn = modal.querySelector(".close-btn");
         const triggers = document.querySelectorAll(
-          "[data-lightbox-src], .lightbox-trigger"
+          "[data-lightbox-src], .lightbox-trigger",
         );
         let lastFocused = null;
 
@@ -1374,7 +1372,8 @@
           const image = trigger.matches("img")
             ? trigger
             : trigger.querySelector("img");
-          const src = trigger.dataset.lightboxSrc || image?.currentSrc || image?.src;
+          const src =
+            trigger.dataset.lightboxSrc || image?.currentSrc || image?.src;
           const alt = trigger.dataset.lightboxAlt || image?.alt || "";
 
           if (!src || !modalImg) return;
@@ -1776,21 +1775,17 @@
       function renderTabs() {
         tabs.innerHTML = categories
           .map(
-            (category, index) => `
-          <button
-            class="tf-tab ${category.id === activeCategoryId ? "is-active" : ""}"
-            role="tab"
-            id="tab-${category.id}"
-            aria-selected="${category.id === activeCategoryId}"
-            aria-controls="panel-${category.id}"
-            tabindex="${category.id === activeCategoryId ? "0" : "-1"}"
-            data-category="${category.id}"
-            type="button"
-          >
-            <span>${category.label}</span>
-            <small class="tf-tab-count ${category.id === activeCategoryId ? "is-active-count" : ""}">${category.items.length}</small>
-          </button>
-        `,
+            (category) => `
+        <button
+          class="tf-tab ${category.id === activeCategoryId ? "is-active" : ""}"
+          aria-pressed="${category.id === activeCategoryId}"
+          data-category="${category.id}"
+          type="button"
+        >
+          <span>${category.label}</span>
+          <small class="tf-tab-count ${category.id === activeCategoryId ? "is-active-count" : ""}">${category.items.length}</small>
+        </button>
+      `,
           )
           .join("");
       }
@@ -1978,8 +1973,6 @@
         }
       });
 
-      
-
       viewButtons.forEach((button) => {
         button.addEventListener("click", () => {
           activeView = button.dataset.view;
@@ -1990,8 +1983,6 @@
           mapView.classList.toggle("is-hidden", activeView !== "map");
         });
       });
-
-      
 
       updateView("auto");
     </script>
