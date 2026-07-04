@@ -102,6 +102,7 @@
     />
     <link rel="stylesheet" href="styles.css?v=site-1" />
     <link rel="stylesheet" href="aloft.css?v=aloft-case-1" />
+      <link rel="stylesheet" href="lite-light.css" />
   </head>
 
   <body class="case-aloft">
@@ -339,6 +340,7 @@
                 data-lightbox-alt="Aloft analysis workspace with property comparison cards"
               >
                 <img
+                  data-lightbox="public/images/a2.webp"
                   src="public/images/a2.webp"
                   width="1830"
                   height="616"
@@ -366,6 +368,7 @@
                 data-lightbox-alt="Aloft adjustment grid with subject and comparable property columns"
               >
                 <img
+                  data-lightbox="public/images/a3.webp"
                   src="public/images/a3.webp"
                   width="1084"
                   height="843"
@@ -393,6 +396,7 @@
                 data-lightbox-alt="Aloft site analysis charts showing site size and valuation"
               >
                 <img
+                  data-lightbox="public/images/a4.webp"
                   src="public/images/a4.webp"
                   height="791"
                   alt="Aloft site analysis charts showing site size and valuation"
@@ -419,6 +423,7 @@
                 data-lightbox-alt="Aloft commentary view with report sections and export action"
               >
                 <img
+                  data-lightbox="public/images/a5.webp"
                   src="public/images/a5.webp"
                   width="762"
                   height="833"
@@ -552,61 +557,25 @@
       </section>
     </main>
 
-    <div
-      id="lightbox-modal"
-      aria-hidden="true"
-      role="dialog"
-      aria-label="Image preview"
-    >
-      <button class="close-btn" type="button" aria-label="Close image preview">
-        &times;
-      </button>
-      <img src="" alt="" />
-    </div>
 
+    <script src="lite-light.js"></script>
     <script>
-      (() => {
-        const modal = document.getElementById("lightbox-modal");
-        const modalImg = modal?.querySelector("img");
-        const closeBtn = modal?.querySelector(".close-btn");
-        const triggers = document.querySelectorAll("[data-lightbox-src]");
+      window.initLiteLight?.();
 
-        if (!modal || !modalImg || !closeBtn || triggers.length === 0) return;
+      document.addEventListener("click", (event) => {
+        if (!(event.target instanceof Element)) return;
 
-        let lastFocused = null;
+        const trigger = event.target.closest(
+          ".lightbox-trigger, .lightbox-image-button, .aloft-image-button",
+        );
+        if (!trigger || event.target.matches("img[data-lightbox]")) return;
 
-        const openModal = (trigger) => {
-          lastFocused = trigger;
-          modalImg.src = trigger.dataset.lightboxSrc;
-          modalImg.alt = trigger.dataset.lightboxAlt || "";
-          modal.classList.add("active");
-          modal.setAttribute("aria-hidden", "false");
-          document.body.classList.add("is-lightbox-open");
-          closeBtn.focus();
-        };
+        const image = trigger.querySelector("img[data-lightbox]");
+        if (!image) return;
 
-        const closeModal = () => {
-          modal.classList.remove("active");
-          modal.setAttribute("aria-hidden", "true");
-          document.body.classList.remove("is-lightbox-open");
-          modalImg.src = "";
-          lastFocused?.focus();
-        };
-
-        triggers.forEach((trigger) => {
-          trigger.addEventListener("click", () => openModal(trigger));
-        });
-
-        closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) closeModal();
-        });
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
-          }
-        });
-      })();
+        event.preventDefault();
+        image.click();
+      });
     </script>
   </body>
 </html>
