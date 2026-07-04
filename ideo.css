@@ -189,7 +189,8 @@ body.case-ideo {
   --ideo-radius: 6px;
   background: var(--ideo-paper);
   color: var(--ideo-ink);
-  font-family: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:
+    "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.5;
 }
@@ -245,7 +246,7 @@ body.case-ideo .kicker {
 
 .ideo-logo {
   display: inline-grid;
-  grid-template-columns: repeat(4, 32px);
+  grid-template-columns: repeat(7, 32px);
   gap: 2px;
 }
 
@@ -469,9 +470,16 @@ body.case-ideo .kicker {
   width: 16px;
   height: 16px;
   background:
-    linear-gradient(90deg, var(--ideo-teal) 0 45%, transparent 45% 55%, var(--ideo-red) 55%),
+    linear-gradient(
+      90deg,
+      var(--ideo-teal) 0 45%,
+      transparent 45% 55%,
+      var(--ideo-red) 55%
+    ),
     linear-gradient(var(--ideo-orange), var(--ideo-orange));
-  background-size: 100% 7px, 7px 100%;
+  background-size:
+    100% 7px,
+    7px 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
