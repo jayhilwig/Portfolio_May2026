@@ -87,10 +87,14 @@
           class="amazon-case-logo"
           aria-label="Back to Jay Hilwig portfolio"
         >
-          <span class="amazon-logo-word">amazon</span>
-          <span class="amazon-logo-smile" aria-hidden="true"></span>
+          <img
+            src="public/images/jay_amzn_logo3.svg"
+            alt=""
+            width="120"
+            height="32"
+            decoding="async"
+          />
         </a>
-
         <div class="amazon-case-search-wrap">
           <form
             class="amazon-case-search"
@@ -172,14 +176,14 @@
               <div class="amazon-result-query">
                 Search results for “is this real?”
               </div>
-              <a href="#problem" class="amazon-result-card">
+              <div class="amazon-result-card" role="presentation">
                 <span class="amazon-result-count">1 result found</span>
                 <strong>Amazon Transparency</strong>
                 <span>
                   Helping customers answer that question before it becomes a
                   return, complaint, or trust problem.
                 </span>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -232,10 +236,8 @@
             <div class="amazon-product-panel">
               <div class="amazon-panel-label">Featured case study</div>
               <img
-                src="public/images/tr3_gpt.webp"
+                src="public/images/tr3_gpt.png"
                 alt="Amazon Transparency mobile verification experience shown on a phone"
-                decoding="async"
-                fetchpriority="high"
               />
               <div class="amazon-panel-caption">
                 Product authenticity signals across shopping and post-purchase
@@ -411,14 +413,12 @@
               <button
                 class="lightbox-image-button"
                 type="button"
-                data-lightbox-src="public/images/comp_analysis.webp"
+                data-lightbox-src="public/images/comp_analysis.svg"
                 data-lightbox-alt="Competitive analysis and themes for anti-counterfeiting experiences"
               >
                 <img
-                  src="public/images/comp_analysis.webp"
+                  src="public/images/comp_analysis.svg"
                   alt="Competitive analysis and themes for anti-counterfeiting experiences"
-                  loading="lazy"
-                  decoding="async"
                 />
               </button>
             </div>
@@ -520,14 +520,12 @@
               <button
                 class="lightbox-image-button"
                 type="button"
-                data-lightbox-src="public/images/Final-Transparency-screens-2.webp"
+                data-lightbox-src="public/images/Final-Transparency-screens-2.svg"
                 data-lightbox-alt="Final Amazon Transparency screen designs"
               >
                 <img
-                  src="public/images/Final-Transparency-screens-2.webp"
+                  src="public/images/Final-Transparency-screens-2.svg"
                   alt="Final Amazon Transparency screen designs"
-                  loading="lazy"
-                  decoding="async"
                 />
               </button>
             </div>
@@ -547,20 +545,22 @@
           <div class="amazon-resource-grid">
             <article class="amazon-resource-card">
               <div class="amazon-resource-media amazon-resource-media--video">
-                <button
-                  class="amazon-video-poster"
-                  type="button"
-                  data-youtube-id="Hu71_OuXjec"
-                  aria-label="Play Amazon UXR interview highlights video"
-                >
-                  <img
-                    src="https://i.ytimg.com/vi/Hu71_OuXjec/hqdefault.jpg"
-                    alt="Amazon UXR Interviews video preview"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span class="amazon-video-play" aria-hidden="true">▶</span>
-                </button>
+                <iframe
+                  src="https://www.youtube.com/embed/Hu71_OuXjec"
+                  title="Amazon UXR interview highlights"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="amazon-resource-body">
                 <div class="kicker">Video</div>
@@ -919,7 +919,9 @@
 
         const openSearch = () => {
           setHeaderHeight();
-          if (searchInput) searchInput.value = "just a simulation :)";
+          if (searchInput)
+            searchInput.value =
+              "Good instinct 🕵️ — that's the exact question millions of Amazon shoppers ask — and the one this case study is about.";
           body.classList.add("is-search-open");
           searchWrap.classList.add("is-search-open");
           searchButton?.setAttribute("aria-expanded", "true");
@@ -941,6 +943,16 @@
           event.preventDefault();
         });
         backdrop.addEventListener("click", closeSearch);
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            body.classList.contains("is-search-open")
+          ) {
+            closeSearch();
+            searchInput?.blur();
+          }
+        });
 
         document.addEventListener("click", (event) => {
           if (!body.classList.contains("is-search-open")) return;
@@ -974,13 +986,17 @@
           closeBtn.focus();
         };
 
-        const closeModal = () => {
+        const closeModal = ({ restoreFocus = true } = {}) => {
           modal.classList.remove("active");
           modal.setAttribute("aria-hidden", "true");
           document.body.classList.remove("is-lightbox-open");
           modalImg.src = "";
           modalImg.alt = "";
-          lastFocused?.focus();
+          if (restoreFocus) {
+            lastFocused?.focus();
+          } else {
+            closeBtn.blur();
+          }
         };
 
         triggers.forEach((trigger) => {
@@ -993,7 +1009,7 @@
         });
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
+            closeModal({ restoreFocus: false });
           }
         });
       })();
@@ -1088,23 +1104,6 @@
         figmaClose?.addEventListener("click", closeFigmaModal);
         figmaModal?.addEventListener("click", (event) => {
           if (event.target === figmaModal) closeFigmaModal();
-        });
-
-        document.querySelectorAll("[data-youtube-id]").forEach((button) => {
-          button.addEventListener("click", () => {
-            const id = button.dataset.youtubeId;
-
-            const iframe = document.createElement("iframe");
-            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-            iframe.title = "Amazon UXR interview highlights";
-            iframe.loading = "lazy";
-            iframe.referrerPolicy = "strict-origin-when-cross-origin";
-            iframe.allow =
-              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-            iframe.allowFullscreen = true;
-
-            button.replaceWith(iframe);
-          });
         });
 
         let pdfJsLoader = null;

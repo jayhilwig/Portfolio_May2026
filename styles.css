@@ -2012,7 +2012,7 @@ main,
   --amazon-nav: #131921;
   --amazon-subnav: #232f3e;
   --amazon-card: #ffffff;
-  --amazon-orange: #d68100;
+  --amazon-orange: #ff9900;
   --amazon-orange-dark: #c45500;
   --amazon-blue: #007185;
   --amazon-border: #d5d9d9;
@@ -2280,10 +2280,12 @@ main,
   text-decoration: none;
 }
 
-.amazon-result-card:hover strong {
-  color: var(--amazon-blue);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+.amazon-result-card {
+  display: grid;
+  gap: 4px;
+  color: var(--amazon-ink);
+  text-decoration: none;
+  cursor: default;
 }
 
 .amazon-result-count {
@@ -2539,6 +2541,21 @@ main,
   padding: 12px;
   border: 1px solid var(--amazon-border);
   background: #f7fafa;
+}
+
+.case-amazon .lightbox-image-button,
+.case-amazon .lightbox-image-button:focus,
+.case-amazon .lightbox-image-button:focus-visible,
+.case-amazon .lightbox-image-button:active {
+  outline: 0;
+  box-shadow: none;
+}
+
+.case-amazon .lightbox-image-button:focus img,
+.case-amazon .lightbox-image-button:focus-visible img,
+.case-amazon .lightbox-image-button:active img {
+  outline: 0;
+  box-shadow: none;
 }
 
 .case-amazon .amazon-resource-section .section-head {

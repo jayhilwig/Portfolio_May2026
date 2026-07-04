@@ -1,7 +1,111 @@
 /* Amazon case study-only overrides.
    Loaded after styles.css and scoped to body.case-amazon so the homepage is untouched. */
 
-/* Scoped force-overrides for the Amazon PDF.js modal. Kept in-page so the PDF viewer is not dependent on shared CSS cache/order. */
+/* Click-to-load YouTube poster */
+body.case-amazon .amazon-video-poster {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  background: #111;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+body.case-amazon .amazon-video-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.case-amazon .amazon-video-play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #ff0000;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Shared Amazon modal lock */
+body.case-amazon.is-pdf-modal-open,
+body.case-amazon.is-figma-modal-open {
+  overflow: hidden !important;
+}
+
+/* Amazon image lightbox trigger cleanup */
+body.case-amazon .lightbox-trigger,
+body.case-amazon .lightbox-trigger:hover,
+body.case-amazon .lightbox-trigger:focus,
+body.case-amazon .lightbox-trigger:active,
+body.case-amazon .lightbox-trigger:focus-visible {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+body.case-amazon button.lightbox-trigger {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0 !important;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+body.case-amazon .lightbox-trigger::before,
+body.case-amazon .lightbox-trigger::after,
+body.case-amazon .lightbox-trigger:focus::before,
+body.case-amazon .lightbox-trigger:focus::after,
+body.case-amazon .lightbox-trigger:focus-visible::before,
+body.case-amazon .lightbox-trigger:focus-visible::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.case-amazon .lightbox-trigger img,
+body.case-amazon .lightbox-trigger:hover img,
+body.case-amazon .lightbox-trigger:focus img,
+body.case-amazon .lightbox-trigger:active img,
+body.case-amazon .lightbox-trigger:focus-visible img {
+  display: block;
+  cursor: pointer;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+body.case-amazon .lightbox-trigger:hover img {
+  transform: scale(1.01);
+}
+
+/* SVG header logo */
+body.case-amazon .amazon-case-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+body.case-amazon .amazon-case-logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+/* PDF.js modal */
 body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
   position: fixed;
   inset: 0;
@@ -11,10 +115,6 @@ body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
   justify-content: center;
   padding: clamp(12px, 2vw, 24px);
   background: rgba(0, 0, 0, 0.72);
-}
-
-body.case-amazon.is-pdf-modal-open {
-  overflow: hidden !important;
 }
 
 body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal.is-open {
@@ -164,75 +264,7 @@ body.case-amazon #pdf-preview-modal .amazon-pdf-viewer canvas {
   background: #fff;
 }
 
-.amazon-video-poster {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  padding: 0;
-  border: 0;
-  background: #111;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.amazon-video-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.amazon-video-play {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: 72px;
-  height: 52px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: #ff0000;
-  color: #fff;
-  font-size: 28px;
-  line-height: 1;
-}
-
-@media (max-width: 700px) {
-  body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal {
-    padding: 0;
-  }
-
-  body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
-    border: 0 !important;
-  }
-
-  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar {
-    flex-wrap: wrap !important;
-    gap: 6px;
-  }
-
-  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
-    display: none;
-  }
-
-  body.case-amazon #pdf-preview-modal .amazon-pdf-viewer {
-    padding: 12px;
-  }
-
-  body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
-    max-width: 140px;
-  }
-}
-
-/* Scoped force-overrides for the Amazon Figma prototype modal. Mirrors the PDF viewer footprint but uses a tabbed iframe shell. */
-body.case-amazon.is-figma-modal-open {
-  overflow: hidden !important;
-}
-
+/* Figma modal */
 body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
   position: fixed;
   inset: 0;
@@ -388,10 +420,12 @@ body.case-amazon #figma-placeholder .amazon-figma-note-text {
 }
 
 @media (max-width: 700px) {
+  body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal,
   body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
     padding: 0;
   }
 
+  body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel,
   body.case-amazon #figma-placeholder .amazon-modal-panel.amazon-figma-panel {
     width: 100vw !important;
     max-width: 100vw !important;
@@ -400,19 +434,28 @@ body.case-amazon #figma-placeholder .amazon-figma-note-text {
     border: 0 !important;
   }
 
+  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar,
   body.case-amazon #figma-placeholder .amazon-figma-toolbar {
-    flex-wrap: wrap;
-    min-height: auto;
+    flex-wrap: wrap !important;
     gap: 6px;
+  }
+
+  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+    display: none;
+  }
+
+  body.case-amazon #pdf-preview-modal .amazon-pdf-viewer,
+  body.case-amazon #figma-placeholder .amazon-figma-viewer {
+    padding: 12px;
+  }
+
+  body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+    max-width: 140px;
   }
 
   body.case-amazon #figma-placeholder .amazon-figma-title {
     flex-basis: 100%;
     order: 3;
-  }
-
-  body.case-amazon #figma-placeholder .amazon-figma-viewer {
-    padding: 12px;
   }
 
   body.case-amazon #figma-placeholder .amazon-figma-notes {
