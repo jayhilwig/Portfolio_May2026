@@ -76,8 +76,7 @@
       }
     </script>
 
-    <link rel="stylesheet" href="styles.css?v=site-1" />
-    <link rel="stylesheet" href="amazon.css?v=amazon-case-1" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body class="case-amazon">
@@ -88,11 +87,8 @@
           class="amazon-case-logo"
           aria-label="Back to Jay Hilwig portfolio"
         >
-          <img
-            src="public/images/jay_amzn_logo3.svg"
-            alt="Amazon logo by Jay Hilwig"
-            class="amazon-logo-svg"
-          />
+          <span class="amazon-logo-word">amazon</span>
+          <span class="amazon-logo-smile" aria-hidden="true"></span>
         </a>
 
         <div class="amazon-case-search-wrap">
@@ -109,7 +105,7 @@
               id="amazon-case-search-input"
               class="amazon-search-input"
               type="search"
-              value="Search results for 'is this real?'"
+              value="is this real?"
               readonly
               aria-describedby="amazon-search-help"
             />
@@ -174,7 +170,7 @@
 
             <div class="amazon-search-result" id="search-result">
               <div class="amazon-result-query">
-                Search results for 'is this real?'
+                Search results for “is this real?”
               </div>
               <a href="#problem" class="amazon-result-card">
                 <span class="amazon-result-count">1 result found</span>
@@ -236,9 +232,8 @@
             <div class="amazon-product-panel">
               <div class="amazon-panel-label">Featured case study</div>
               <img
-                src="public/images/tr3_gpt.webp"
+                src="public/images/tr3_gpt.png"
                 alt="Amazon Transparency mobile verification experience shown on a phone"
-                fetchpriority="high"
               />
               <div class="amazon-panel-caption">
                 Product authenticity signals across shopping and post-purchase
@@ -267,7 +262,7 @@
               <div>Expected growth in Transparency code scans.</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">350+</div>
+              <div class="stat-number">372</div>
               <div>UserTesting sessions across the US, UK, and Germany.</div>
             </div>
           </div>
@@ -388,7 +383,7 @@
                 <div>
                   <div class="title">UserTesting validation</div>
                   <div class="desc">
-                    Ran 350+ unmoderated and 6 moderated sessions across the US,
+                    Ran 366 unmoderated and 6 moderated sessions across the US,
                     UK, and DE to test comprehension, clarity, and the value of
                     Amazon Lens.
                   </div>
@@ -411,13 +406,17 @@
                 iconography and similar color palettes to build trust with
                 users.
               </p>
-              <div class="lightbox-trigger">
+              <button
+                class="lightbox-image-button"
+                type="button"
+                data-lightbox-src="public/images/comp_analysis.svg"
+                data-lightbox-alt="Competitive analysis and themes for anti-counterfeiting experiences"
+              >
                 <img
-                  src="public/images/comp_analysis.webp"
+                  src="public/images/comp_analysis.svg"
                   alt="Competitive analysis and themes for anti-counterfeiting experiences"
-                  loading="lazy"
                 />
-              </div>
+              </button>
             </div>
             <div class="artifact-card">
               <div class="kicker">Artifact</div>
@@ -426,13 +425,17 @@
                 Lean Canvas helped the team align around assumptions,
                 opportunity framing, and testable design decisions.
               </p>
-              <div class="lightbox-trigger">
+              <button
+                class="lightbox-image-button"
+                type="button"
+                data-lightbox-src="public/images/Lean_canvas.svg"
+                data-lightbox-alt="Lean Canvas artifact for Amazon Transparency"
+              >
                 <img
                   src="public/images/Lean_canvas.svg"
                   alt="Lean Canvas artifact for Amazon Transparency"
-                  loading="lazy"
                 />
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -491,13 +494,17 @@
                 Mapping the flow helped clarify how customers moved from product
                 discovery to verification.
               </p>
-              <div class="lightbox-trigger">
+              <button
+                class="lightbox-image-button"
+                type="button"
+                data-lightbox-src="public/images/FlowDiagram.svg"
+                data-lightbox-alt="Amazon Transparency user flow diagram"
+              >
                 <img
-                  src="public/images/FlowDiagram.webp"
+                  src="public/images/FlowDiagram.svg"
                   alt="Amazon Transparency user flow diagram"
-                  loading="lazy"
                 />
-              </div>
+              </button>
             </div>
             <div class="artifact-card">
               <div class="kicker">Final screens</div>
@@ -506,33 +513,39 @@
                 Final designs emphasized clearer explanations, accessibility,
                 iconography, and alignment with Amazon design system branding.
               </p>
-              <div class="lightbox-trigger">
+              <button
+                class="lightbox-image-button"
+                type="button"
+                data-lightbox-src="public/images/Final-Transparency-screens-2.svg"
+                data-lightbox-alt="Final Amazon Transparency screen designs"
+              >
                 <img
-                  src="public/images/Final-Transparency-screens-2.webp"
+                  src="public/images/Final-Transparency-screens-2.svg"
                   alt="Final Amazon Transparency screen designs"
-                  loading="lazy"
                 />
-              </div>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="amazon-section amazon-shelf">
+      <section class="amazon-section amazon-shelf amazon-resource-section">
         <div class="container">
           <div class="section-head">
-            <div class="kicker">Media + references</div>
-            <h2>Research prototypes and artifacts</h2>
+            <div>
+              <div class="kicker">Media + references</div>
+              <h2>Research prototypes and artifacts</h2>
+            </div>
           </div>
 
-          <div class="resource-grid">
-            <div
-              class="resource-card resource-card--preview resource-card--video-embed"
-            >
-              <div class="resource-card-media resource-card-media--video">
+          <div class="amazon-resource-grid">
+            <article class="amazon-resource-card">
+              <div class="amazon-resource-media amazon-resource-media--video">
                 <iframe
-                  src="https://www.youtube-nocookie.com/embed/Hu71_OuXjec"
-                  title="Amazon Transparency case study video"
+                  src="https://www.youtube.com/embed/Hu71_OuXjec"
+                  title="Amazon UXR interview highlights"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
                   allow="
                     accelerometer;
                     autoplay;
@@ -543,10 +556,9 @@
                     web-share;
                   "
                   allowfullscreen
-                  loading="lazy"
                 ></iframe>
               </div>
-              <div class="resource-card-body">
+              <div class="amazon-resource-body">
                 <div class="kicker">Video</div>
                 <h3>Customer interview highlights</h3>
                 <p class="desc">
@@ -555,22 +567,23 @@
                   post-authentication value.
                 </p>
               </div>
-            </div>
+            </article>
 
-            <button
-              class="resource-card resource-card--button"
-              type="button"
-              data-modal-target="figma-placeholder"
-            >
-              <div class="resource-card-media resource-card-media--figma">
+            <article class="amazon-resource-card">
+              <button
+                class="amazon-resource-media amazon-resource-button"
+                type="button"
+                data-modal-target="figma-placeholder"
+                aria-label="Preview customer-tested Figma prototype flows"
+              >
+                <span class="amazon-resource-pill">Figma prototype</span>
                 <img
                   src="public/images/figma_logo.svg"
-                  alt="Figma logo"
-                  class="resource-thumb resource-thumb--logo"
+                  alt=""
+                  aria-hidden="true"
                 />
-                <span class="resource-chip">Figma prototype</span>
-              </div>
-              <div class="resource-card-body">
+              </button>
+              <div class="amazon-resource-body">
                 <div class="kicker">Prototype</div>
                 <h3>Customer-tested prototype flows</h3>
                 <p class="desc">
@@ -579,31 +592,32 @@
                   post-authentication experiences.
                 </p>
               </div>
-            </button>
+            </article>
 
-            <button
-              class="resource-card resource-card--button"
-              type="button"
-              data-pdf-src="public/images/CTP_CX_interviews.pdf"
-            >
-              <div class="resource-card-media resource-card-media--doc">
+            <article class="amazon-resource-card">
+              <button
+                class="amazon-resource-media amazon-resource-button amazon-resource-media--pdf"
+                type="button"
+                data-pdf-src="public/images/CTP_CX_interviews.pdf"
+                aria-label="Preview customer interview notes PDF"
+              >
+                <span class="amazon-resource-pill">PDF preview</span>
                 <img
                   src="public/images/PDF_logo.svg"
-                  alt="PDF icon"
-                  class="resource-thumb resource-thumb--logo"
+                  alt=""
+                  aria-hidden="true"
                 />
-                <span class="resource-chip">PDF preview</span>
-              </div>
-              <div class="resource-card-body">
+              </button>
+              <div class="amazon-resource-body">
                 <div class="kicker">Research</div>
                 <h3>Customer interview notes</h3>
                 <p class="desc">
-                  Research summary from customer interviews, including key
-                  findings, quotes, and recommendations that shaped the
-                  Transparency scan experience.
+                  Research summary from customer interviews, including findings,
+                  quotes, and recommendations that shaped the Transparency scan
+                  experience.
                 </p>
               </div>
-            </button>
+            </article>
           </div>
         </div>
       </section>
@@ -684,7 +698,7 @@
               improve customer behavior in key moments of the journey.
             </p>
             <a class="cta" href="index.html#work">
-              <span class="circle" style="font-size: 2rem">↗</span>
+              <span class="circle">↗</span>
               <span>Back to work</span>
             </a>
           </div>
@@ -716,7 +730,7 @@
               aria-selected="true"
               data-figma-tab="0"
             >
-              1
+              Scan
             </button>
             <button
               class="amazon-figma-tab"
@@ -725,7 +739,7 @@
               aria-selected="false"
               data-figma-tab="1"
             >
-              2
+              Explorations
             </button>
             <button
               class="amazon-figma-tab"
@@ -734,7 +748,7 @@
               aria-selected="false"
               data-figma-tab="2"
             >
-              3
+              Final CX
             </button>
           </div>
           <div
@@ -742,7 +756,7 @@
             id="figma-placeholder-title"
             data-figma-title
           >
-            Customer touchpoints overview
+            Scan entry point
           </div>
           <div class="amazon-figma-toolbar-spacer"></div>
           <button
@@ -750,7 +764,7 @@
             type="button"
             aria-label="Close Figma preview"
           >
-            ×
+            &times;
           </button>
         </div>
 
@@ -768,23 +782,12 @@
         <div class="amazon-figma-notes" aria-live="polite">
           <div class="amazon-figma-note-label">Prototype note</div>
           <p class="amazon-figma-note-text" data-figma-note>
-            Replace this copy with the short context you want visitors to have
-            before exploring this prototype.
+            Explored how Transparency could surface inside the Amazon delivery
+            experience, giving customers a clear path to scan the code and
+            verify authenticity directly from the Amazon app.
           </p>
         </div>
       </div>
-    </div>
-
-    <div
-      id="lightbox-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Image preview"
-    >
-      <button class="close-btn" type="button" aria-label="Close image preview">
-        ×
-      </button>
-      <img src="" alt="" />
     </div>
 
     <div
@@ -805,8 +808,9 @@
               type="button"
               data-pdf-prev
               aria-label="Previous page"
+              disabled
             >
-              ‹
+              &lsaquo;
             </button>
             <input
               class="amazon-pdf-page-input"
@@ -817,14 +821,17 @@
               aria-label="PDF page number"
               data-pdf-page-input
             />
-            <span class="amazon-pdf-page-count" data-pdf-page-status>of 1</span>
+            <span class="amazon-pdf-page-count" data-pdf-page-status>
+              Loading...
+            </span>
             <button
               class="amazon-pdf-icon-button"
               type="button"
               data-pdf-next
               aria-label="Next page"
+              disabled
             >
-              ›
+              &rsaquo;
             </button>
           </div>
 
@@ -837,7 +844,7 @@
               data-pdf-zoom-out
               aria-label="Zoom out"
             >
-              −
+              -
             </button>
             <button
               class="amazon-pdf-icon-button"
@@ -863,7 +870,7 @@
               type="button"
               aria-label="Close PDF preview"
             >
-              ×
+              &times;
             </button>
           </div>
         </div>
@@ -876,6 +883,17 @@
       </div>
     </div>
 
+    <div
+      id="lightbox-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Image preview"
+    >
+      <button class="close-btn" type="button" aria-label="Close image preview">
+        &times;
+      </button>
+      <img src="" alt="" />
+    </div>
     <script>
       (() => {
         const body = document.body;
@@ -885,28 +903,6 @@
         const searchInput = document.querySelector(".amazon-search-input");
         const searchButton = document.querySelector(".amazon-search-button");
         const backdrop = document.querySelector(".amazon-search-backdrop");
-        const modalTriggers = document.querySelectorAll("[data-modal-target]");
-        const modal = document.getElementById("figma-placeholder");
-        const modalClose = modal?.querySelector(".amazon-figma-close");
-        const figmaTabs = modal?.querySelectorAll("[data-figma-tab]") || [];
-        const figmaFrame = modal?.querySelector("[data-figma-frame]");
-        const figmaTitle = modal?.querySelector("[data-figma-title]");
-        const figmaNote = modal?.querySelector("[data-figma-note]");
-        const lightbox = document.getElementById("lightbox-modal");
-        const lightboxImage = lightbox?.querySelector("img");
-        const lightboxClose = lightbox?.querySelector(".close-btn");
-        const pdfTriggers = document.querySelectorAll("[data-pdf-src]");
-        const pdfModal = document.getElementById("pdf-preview-modal");
-        const pdfClose = pdfModal?.querySelector(".amazon-pdf-close");
-        const pdfCanvas = pdfModal?.querySelector("canvas");
-        const pdfViewer = pdfModal?.querySelector(".amazon-pdf-viewer");
-        const pdfPrev = pdfModal?.querySelector("[data-pdf-prev]");
-        const pdfNext = pdfModal?.querySelector("[data-pdf-next]");
-        const pdfStatus = pdfModal?.querySelector("[data-pdf-page-status]");
-        const pdfPageInput = pdfModal?.querySelector("[data-pdf-page-input]");
-        const pdfZoomOut = pdfModal?.querySelector("[data-pdf-zoom-out]");
-        const pdfZoomIn = pdfModal?.querySelector("[data-pdf-zoom-in]");
-        const pdfZoomSelect = pdfModal?.querySelector("[data-pdf-zoom-select]");
 
         if (!header || !searchWrap || !backdrop) return;
 
@@ -919,17 +915,14 @@
 
         const openSearch = () => {
           setHeaderHeight();
-          if (searchInput)
-            searchInput.value =
-              "Good instinct 🕵️ — that's the exact question millions of Amazon shoppers ask — and the one this case study is about.";
+          if (searchInput) searchInput.value = "just a simulation :)";
           body.classList.add("is-search-open");
           searchWrap.classList.add("is-search-open");
           searchButton?.setAttribute("aria-expanded", "true");
         };
 
         const closeSearch = () => {
-          if (searchInput)
-            searchInput.value = "Search results for 'is this real?'";
+          if (searchInput) searchInput.value = "is this real?";
           body.classList.remove("is-search-open");
           searchWrap.classList.remove("is-search-open");
           searchButton?.setAttribute("aria-expanded", "false");
@@ -945,41 +938,84 @@
         });
         backdrop.addEventListener("click", closeSearch);
 
-        const closeLightbox = () => {
-          if (!lightbox || !lightboxImage) return;
-          lightbox.classList.remove("active");
-          lightboxImage.src = "";
-          lightboxImage.alt = "";
+        document.addEventListener("click", (event) => {
+          if (!body.classList.contains("is-search-open")) return;
+          if (
+            searchWrap.contains(event.target) ||
+            backdrop.contains(event.target)
+          ) {
+            return;
+          }
+          closeSearch();
+        });
+      })();
+
+      (() => {
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = modal?.querySelector("img");
+        const closeBtn = modal?.querySelector(".close-btn");
+        const triggers = document.querySelectorAll("[data-lightbox-src]");
+
+        if (!modal || !modalImg || !closeBtn || triggers.length === 0) return;
+
+        let lastFocused = null;
+
+        const openModal = (trigger) => {
+          lastFocused = trigger;
+          modalImg.src = trigger.dataset.lightboxSrc;
+          modalImg.alt = trigger.dataset.lightboxAlt || "";
+          modal.classList.add("active");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("is-lightbox-open");
+          closeBtn.focus();
         };
 
-        document.querySelectorAll(".lightbox-trigger").forEach((trigger) => {
-          const img = trigger.querySelector("img");
-          if (!img) return;
+        const closeModal = () => {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("is-lightbox-open");
+          modalImg.src = "";
+          modalImg.alt = "";
+          lastFocused?.focus();
+        };
 
-          trigger.setAttribute("role", "button");
-          trigger.setAttribute("tabindex", "0");
-          trigger.setAttribute("aria-label", img.alt || "Open image preview");
-
-          const openLightbox = () => {
-            if (!lightbox || !lightboxImage) return;
-            lightbox.classList.add("active");
-            lightboxImage.src = img.src;
-            lightboxImage.alt = img.alt;
-          };
-
-          trigger.addEventListener("click", openLightbox);
-          trigger.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              openLightbox();
-            }
-          });
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => openModal(trigger));
         });
 
-        lightboxClose?.addEventListener("click", closeLightbox);
-        lightbox?.addEventListener("click", (event) => {
-          if (event.target === lightbox) closeLightbox();
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) closeModal();
         });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+      })();
+
+      (() => {
+        const body = document.body;
+        const figmaTriggers = document.querySelectorAll("[data-modal-target]");
+        const figmaModal = document.getElementById("figma-placeholder");
+        const figmaClose = figmaModal?.querySelector(".amazon-figma-close");
+        const figmaTabs =
+          figmaModal?.querySelectorAll("[data-figma-tab]") || [];
+        const figmaFrame = figmaModal?.querySelector("[data-figma-frame]");
+        const figmaTitle = figmaModal?.querySelector("[data-figma-title]");
+        const figmaNote = figmaModal?.querySelector("[data-figma-note]");
+        const pdfTriggers = document.querySelectorAll("[data-pdf-src]");
+        const pdfModal = document.getElementById("pdf-preview-modal");
+        const pdfClose = pdfModal?.querySelector(".amazon-pdf-close");
+        const pdfCanvas = pdfModal?.querySelector("canvas");
+        const pdfViewer = pdfModal?.querySelector(".amazon-pdf-viewer");
+        const pdfPrev = pdfModal?.querySelector("[data-pdf-prev]");
+        const pdfNext = pdfModal?.querySelector("[data-pdf-next]");
+        const pdfStatus = pdfModal?.querySelector("[data-pdf-page-status]");
+        const pdfPageInput = pdfModal?.querySelector("[data-pdf-page-input]");
+        const pdfZoomOut = pdfModal?.querySelector("[data-pdf-zoom-out]");
+        const pdfZoomIn = pdfModal?.querySelector("[data-pdf-zoom-in]");
+        const pdfZoomSelect = pdfModal?.querySelector("[data-pdf-zoom-select]");
 
         const figmaViews = [
           {
@@ -999,10 +1035,13 @@
           },
         ];
 
+        let lastFigmaTrigger = null;
+
         const setFigmaView = (index) => {
           const view = figmaViews[index] || figmaViews[0];
-          if (figmaFrame && figmaFrame.src !== view.src)
+          if (figmaFrame && figmaFrame.src !== view.src) {
             figmaFrame.src = view.src;
+          }
           if (figmaTitle) figmaTitle.textContent = view.title;
           if (figmaNote) figmaNote.textContent = view.note;
 
@@ -1013,18 +1052,23 @@
           });
         };
 
-        const openModal = () => {
+        const openFigmaModal = (trigger) => {
+          if (!figmaModal) return;
+          lastFigmaTrigger = trigger;
           body.classList.add("is-figma-modal-open");
           setFigmaView(0);
-          modal?.classList.add("is-open");
-          modal?.setAttribute("aria-hidden", "false");
+          figmaModal.classList.add("is-open");
+          figmaModal.setAttribute("aria-hidden", "false");
+          figmaClose?.focus();
         };
 
-        const closeModal = () => {
+        const closeFigmaModal = () => {
+          if (!figmaModal?.classList.contains("is-open")) return;
           body.classList.remove("is-figma-modal-open");
-          modal?.classList.remove("is-open");
-          modal?.setAttribute("aria-hidden", "true");
+          figmaModal.classList.remove("is-open");
+          figmaModal.setAttribute("aria-hidden", "true");
           if (figmaFrame) figmaFrame.src = "about:blank";
+          lastFigmaTrigger?.focus();
         };
 
         figmaTabs.forEach((tab) => {
@@ -1033,16 +1077,24 @@
           });
         });
 
-        modalTriggers.forEach((trigger) => {
-          trigger.addEventListener("click", openModal);
+        figmaTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => openFigmaModal(trigger));
         });
 
-        modalClose?.addEventListener("click", closeModal);
-        modal?.addEventListener("click", (event) => {
-          if (event.target === modal) closeModal();
+        figmaClose?.addEventListener("click", closeFigmaModal);
+        figmaModal?.addEventListener("click", (event) => {
+          if (event.target === figmaModal) closeFigmaModal();
         });
 
         let pdfJsLoader = null;
+        let pdfDoc = null;
+        let pdfPageNumber = 1;
+        let pdfZoomMode = "auto";
+        let pdfZoomScale = 1;
+        let pdfIsRendering = false;
+        let pdfPendingPage = null;
+        let pdfWheelLock = false;
+        let lastPdfTrigger = null;
 
         const loadPdfJs = () => {
           if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
@@ -1065,14 +1117,6 @@
 
           return pdfJsLoader;
         };
-
-        let pdfDoc = null;
-        let pdfPageNumber = 1;
-        let pdfZoomMode = "auto";
-        let pdfZoomScale = 1;
-        let pdfIsRendering = false;
-        let pdfPendingPage = null;
-        let pdfWheelLock = false;
 
         const updatePdfStatus = () => {
           if (!pdfStatus || !pdfDoc) return;
@@ -1146,8 +1190,9 @@
           await renderPdfPage(pdfPageNumber);
         };
 
-        const openPdfModal = async (src) => {
+        const openPdfModal = async (trigger) => {
           if (!pdfModal || !pdfCanvas) return;
+          lastPdfTrigger = trigger;
 
           body.classList.add("is-pdf-modal-open");
           pdfModal.classList.add("is-open");
@@ -1155,13 +1200,14 @@
           pdfPageNumber = 1;
           pdfZoomMode = "auto";
           pdfZoomScale = 1;
-          if (pdfStatus) pdfStatus.textContent = "Loading…";
+          if (pdfStatus) pdfStatus.textContent = "Loading...";
           if (pdfPageInput) pdfPageInput.value = "1";
           if (pdfZoomSelect) pdfZoomSelect.value = "auto";
+          pdfClose?.focus();
 
           try {
             const pdfjsLib = await loadPdfJs();
-            pdfDoc = await pdfjsLib.getDocument(src).promise;
+            pdfDoc = await pdfjsLib.getDocument(trigger.dataset.pdfSrc).promise;
             updatePdfStatus();
             await renderPdfPage(pdfPageNumber);
           } catch (error) {
@@ -1171,21 +1217,21 @@
         };
 
         const closePdfModal = () => {
+          if (!pdfModal?.classList.contains("is-open")) return;
           body.classList.remove("is-pdf-modal-open");
-          pdfModal?.classList.remove("is-open");
-          pdfModal?.setAttribute("aria-hidden", "true");
+          pdfModal.classList.remove("is-open");
+          pdfModal.setAttribute("aria-hidden", "true");
           pdfDoc = null;
           pdfPageNumber = 1;
           if (pdfCanvas) {
             const context = pdfCanvas.getContext("2d");
             context.clearRect(0, 0, pdfCanvas.width, pdfCanvas.height);
           }
+          lastPdfTrigger?.focus();
         };
 
         pdfTriggers.forEach((trigger) => {
-          trigger.addEventListener("click", () => {
-            openPdfModal(trigger.dataset.pdfSrc);
-          });
+          trigger.addEventListener("click", () => openPdfModal(trigger));
         });
 
         pdfPrev?.addEventListener("click", () => {
@@ -1202,14 +1248,12 @@
 
         pdfZoomOut?.addEventListener("click", () => {
           const currentScale = pdfZoomMode === "auto" ? 1 : pdfZoomScale;
-          const nextScale = Math.max(0.5, currentScale - 0.25);
-          setPdfZoom(String(nextScale));
+          setPdfZoom(String(Math.max(0.5, currentScale - 0.25)));
         });
 
         pdfZoomIn?.addEventListener("click", () => {
           const currentScale = pdfZoomMode === "auto" ? 1 : pdfZoomScale;
-          const nextScale = Math.min(2, currentScale + 0.25);
-          setPdfZoom(String(nextScale));
+          setPdfZoom(String(Math.min(2, currentScale + 0.25)));
         });
 
         pdfZoomSelect?.addEventListener("change", () => {
@@ -1249,15 +1293,6 @@
           { passive: false },
         );
 
-        window.addEventListener("resize", () => {
-          if (
-            pdfModal?.classList.contains("is-open") &&
-            pdfZoomMode === "auto"
-          ) {
-            renderPdfPage(pdfPageNumber);
-          }
-        });
-
         pdfClose?.addEventListener("click", closePdfModal);
         pdfModal?.addEventListener("click", (event) => {
           if (event.target === pdfModal) closePdfModal();
@@ -1271,20 +1306,8 @@
 
         document.addEventListener("keydown", (event) => {
           if (event.key !== "Escape") return;
-          closeLightbox();
-          closeModal();
+          closeFigmaModal();
           closePdfModal();
-        });
-
-        document.addEventListener("click", (event) => {
-          if (!body.classList.contains("is-search-open")) return;
-          if (
-            searchWrap.contains(event.target) ||
-            backdrop.contains(event.target)
-          ) {
-            return;
-          }
-          closeSearch();
         });
       })();
     </script>
