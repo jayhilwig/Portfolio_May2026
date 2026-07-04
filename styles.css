@@ -619,6 +619,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
 }
 .dark-section {
   background: var(--panel);
@@ -1281,6 +1282,7 @@ blockquote {
   line-height: 1.12;
   letter-spacing: -0.01em;
   max-width: 21ch;
+  font-style: italic;
 }
 blockquote em {
   font-family: "FT Regola Neue", Inter, sans-serif;
@@ -1288,6 +1290,7 @@ blockquote em {
   font-size: 1.05rem;
   letter-spacing: -0.01em;
   opacity: 0.82;
+  font-style: italic;
 }
 .footer-mark {
   font-size: 0.95rem;

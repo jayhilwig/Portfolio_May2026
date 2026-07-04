@@ -44,7 +44,6 @@ body.case-aloft {
   line-height: 1.5;
 }
 
-
 .case-aloft h1,
 .case-aloft h2,
 .case-aloft h3,
@@ -426,6 +425,19 @@ body.case-aloft {
   margin-bottom: 26px;
 }
 
+.case-aloft #design .section-head {
+  display: block;
+  margin-bottom: 32px;
+}
+
+.case-aloft #design .section-head .kicker {
+  margin-bottom: 10px;
+}
+
+.case-aloft #design .section-head h2 {
+  max-width: 14ch;
+}
+
 .case-aloft .section-head h2 {
   max-width: 15ch;
 }
@@ -599,7 +611,6 @@ body.case-aloft {
   background: var(--aloft-blue);
   color: #fff;
 }
-
 
 @media (max-width: 1080px) {
   .aloft-appbar {
