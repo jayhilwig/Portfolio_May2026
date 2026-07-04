@@ -1,4 +1,29 @@
 /* Aloft Appraisal case study */
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
 body.case-aloft {
   --aloft-ink: #071b33;
   --aloft-muted: #51677d;

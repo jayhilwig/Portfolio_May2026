@@ -79,11 +79,26 @@
       }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="fonts/Lato-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Lato-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Lato-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link rel="stylesheet" href="styles.css?v=site-1" />
     <link rel="stylesheet" href="aloft.css?v=aloft-case-1" />
@@ -512,7 +527,7 @@
       <section class="aloft-section aloft-impact" id="impact">
         <div class="container case-hero-grid">
           <div>
-            <div class="kicker">Impact</div>
+            <div class="kicker" style="color: white">Impact</div>
             <h2>A denser product made easier to learn, review, and ship.</h2>
           </div>
           <div>
