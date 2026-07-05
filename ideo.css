@@ -1,46 +1,6 @@
 @font-face {
   font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueUltraLight.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueThin.woff2") format("woff2");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueThinItalic.woff2") format("woff2");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueLight.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueLightItalic.woff2") format("woff2");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeue.woff2") format("woff2");
+  src: url("/fonts/HelveticaNeueRoman.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -48,7 +8,7 @@
 
 @font-face {
   font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueItalic.woff2") format("woff2");
+  src: url("/fonts/HelveticaNeueItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -56,7 +16,7 @@
 
 @font-face {
   font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueMedium.woff2") format("woff2");
+  src: url("/fonts/HelveticaNeueMedium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -64,71 +24,15 @@
 
 @font-face {
   font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueMediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueBd.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueBold.woff2") format("woff2");
+  src: url("/fonts/HelveticaNeueBold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueBoldItalic.woff2") format("woff2");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueHeavy.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueHeavyItalic.woff2") format("woff2");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueBlack.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Local";
-  src: url("fonts/HelveticaNeueBlackItalic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarRegular.woff2") format("woff2");
+  src: url("/fonts/FHOscarRegular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -136,7 +40,7 @@
 
 @font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarRegularItalic.woff2") format("woff2");
+  src: url("/fonts/FHOscarRegularItalic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: block;
@@ -144,7 +48,7 @@
 
 @font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarMedium.woff2") format("woff2");
+  src: url("/fonts/FHOscarMedium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: block;
@@ -152,7 +56,7 @@
 
 @font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarSemiBold.woff2") format("woff2");
+  src: url("/fonts/FHOscarSemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: block;
@@ -160,7 +64,7 @@
 
 @font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarBold.woff2") format("woff2");
+  src: url("/fonts/FHOscarBold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: block;
@@ -168,7 +72,7 @@
 
 @font-face {
   font-family: "FH Oscar";
-  src: url("fonts/FHOscarBlack.woff2") format("woff2");
+  src: url("/fonts/FHOscarBlack.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: block;
