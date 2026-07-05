@@ -99,10 +99,6 @@ body.case-ideo {
   line-height: 1.5;
 }
 
-body.case-ideo.is-ideo-lightbox-open {
-  overflow: hidden;
-}
-
 body.case-ideo h1,
 body.case-ideo h2,
 body.case-ideo h3,
@@ -786,52 +782,6 @@ body.case-ideo .kicker {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.58) !important;
   font-size: 0.9rem;
-}
-
-.ideo-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 4000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(16px, 2vw, 28px);
-  background: rgba(0, 0, 0, 0.82);
-}
-
-.ideo-lightbox.is-open {
-  display: flex;
-}
-
-.ideo-lightbox img {
-  max-width: min(94vw, 1400px);
-  max-height: 88vh;
-  width: auto;
-  height: auto;
-  background: #fff;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
-}
-
-.ideo-lightbox-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border: 0;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--ideo-black);
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.ideo-lightbox-close:focus-visible {
-  outline: 3px solid var(--ideo-teal);
-  outline-offset: 4px;
 }
 
 @media (max-width: 900px) {
