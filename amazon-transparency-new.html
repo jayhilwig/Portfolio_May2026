@@ -77,6 +77,7 @@
     </script>
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="amazon.css" />
     <link rel="stylesheet" href="lite-light.css" />
   </head>
 
@@ -550,22 +551,20 @@
           <div class="amazon-resource-grid">
             <article class="amazon-resource-card">
               <div class="amazon-resource-media amazon-resource-media--video">
-                <iframe
-                  src="https://www.youtube.com/embed/Hu71_OuXjec"
-                  title="Amazon UXR interview highlights"
-                  loading="lazy"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  allowfullscreen
-                ></iframe>
+                <button
+                  class="amazon-video-poster"
+                  type="button"
+                  data-youtube-id="Hu71_OuXjec"
+                  aria-label="Play Amazon UXR interview highlights"
+                >
+                  <img
+                    src="public/images/amazon-video-poster.webp"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="amazon-video-play" aria-hidden="true">▶</span>
+                </button>
               </div>
               <div class="amazon-resource-body">
                 <div class="kicker">Video</div>
@@ -958,6 +957,22 @@
           closeSearch();
         });
       })();
+
+      document.querySelectorAll("[data-youtube-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.youtubeId;
+          const iframe = document.createElement("iframe");
+
+          iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+          iframe.title = "Amazon UXR interview highlights";
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+          button.replaceWith(iframe);
+        });
+      });
 
       (() => {
         const body = document.body;
