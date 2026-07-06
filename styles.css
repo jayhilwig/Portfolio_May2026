@@ -583,6 +583,11 @@ h1 {
   justify-content: center;
   font-size: 2rem;
 }
+.circle svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
 .dark-section {
   background: var(--panel);
   color: var(--white);
@@ -1910,5 +1915,75 @@ main,
   }
   .hero {
     padding-top: 156px !important;
+  }
+}
+
+/* Mobile-only QA fixes: homepage spacing + Technology Fluency table */
+@media (max-width: 760px) {
+  .tf-table-wrap {
+    overflow-x: visible;
+  }
+
+  .tf-table,
+  .tf-table tbody,
+  .tf-table tr,
+  .tf-table th,
+  .tf-table td {
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .tf-table tbody th,
+  .tf-table tbody td:nth-child(2),
+  .tf-rating-cell {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    text-align: left;
+  }
+
+  .tf-table tbody td:nth-child(2) {
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .work,
+  .projects,
+  .ai-section,
+  .cv-section {
+    margin-top: 28px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  #work,
+  #ai-work,
+  #tools,
+  #cv {
+    padding-top: 56px !important;
+    scroll-margin-top: 132px;
+  }
+
+  .section-head,
+  .tf-module-head {
+    margin-bottom: 34px;
+  }
+
+  .feature-grid,
+  .ai-work-block {
+    gap: 22px;
+  }
+
+  .project-row {
+    padding: 13px 0;
+  }
+
+  .tf-panel-intro {
+    margin-top: 24px !important;
+    font-size: clamp(1.28rem, 6vw, 1.8rem);
   }
 }

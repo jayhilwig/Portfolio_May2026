@@ -729,13 +729,16 @@
   text-decoration: none;
 }
 
-.case-amazon .circle {
-  background: var(--amazon-orange);
-  color: var(--amazon-ink);
-}
-
 .case-amazon .amazon-impact {
   padding-bottom: 36px;
+}
+.amazon-back-link .circle {
+  background: var(--amazon-ink);
+  color: #fff;
+}
+.amazon-back-link .circle {
+  background: var(--amazon-ink);
+  color: #fff;
 }
 
 @media (max-width: 980px) {
@@ -772,6 +775,26 @@
 @media (max-width: 640px) {
   .case-amazon .container {
     width: min(calc(100% - 20px), 1180px);
+  }
+  .case-amazon .amazon-hero-meta {
+    gap: 8px;
+  }
+
+  .case-amazon .amazon-hero-meta span {
+    width: fit-content;
+    max-width: 100%;
+    min-height: auto;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .amazon-case-nav {
@@ -1318,5 +1341,67 @@ body.case-amazon #figma-placeholder .amazon-figma-note-text {
 
   body.case-amazon #figma-placeholder .amazon-figma-notes {
     padding: 10px 12px 12px;
+  }
+}
+
+/* Mobile-only QA fixes: search button, image thumbnails, and back-to-work CTA */
+@media (max-width: 640px) {
+  .amazon-search-button {
+    width: 72px;
+    min-width: 72px;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    text-indent: 0;
+  }
+  .amazon-case-nav {
+    padding-top: 6px;
+  }
+
+  .amazon-search-button::before {
+    width: 14px;
+    height: 14px;
+    border-width: 3px;
+  }
+
+  .amazon-search-button::after {
+    width: 9px;
+    height: 3px;
+    left: calc(50% + 6px);
+    top: calc(50% + 7px);
+  }
+
+  .case-amazon .artifact-card img[data-lightbox] {
+    aspect-ratio: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    object-fit: contain;
+  }
+
+  .case-amazon .lightbox-image-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .case-amazon .cta {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 8px 20px 8px 8px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--amazon-ink);
+    box-shadow: none;
+    font-weight: 800;
+    text-decoration: none;
   }
 }

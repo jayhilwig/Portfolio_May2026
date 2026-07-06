@@ -952,3 +952,42 @@ body.case-ideo .kicker {
     transition: none;
   }
 }
+
+/* Mobile-only QA fixes: one-line logo tiles + reflection stripe clearance */
+@media (max-width: 640px) {
+  .ideo-logo-link {
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
+  }
+
+  .ideo-logo {
+    grid-template-columns: repeat(7, 22px);
+    gap: 2px;
+    flex: 0 0 auto;
+  }
+
+  .ideo-logo span {
+    width: 22px;
+    height: 22px;
+    font-size: 0.82rem;
+  }
+
+  .ideo-logo-sub {
+    min-width: 0;
+    white-space: nowrap;
+    font-size: 0.86rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ideo-reflection {
+    background:
+      linear-gradient(90deg, var(--ideo-teal) 0 10px, transparent 10px),
+      var(--ideo-black);
+  }
+
+  .ideo-reflection .ideo-container {
+    width: min(calc(100% - 48px), 1180px);
+  }
+}

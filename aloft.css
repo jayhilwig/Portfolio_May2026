@@ -607,7 +607,7 @@ body.case-aloft {
   text-decoration: none;
 }
 
-.case-aloft .circle {
+.aloft-back-link .circle {
   background: var(--aloft-blue);
   color: #fff;
 }
@@ -716,6 +716,48 @@ body.case-aloft {
   .case-aloft .meta {
     justify-self: start;
     text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-aloft .aloft-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-aloft .aloft-hero-actions li,
+  .case-aloft .aloft-hero-actions span {
+    list-style: none;
+  }
+
+  .case-aloft .aloft-hero-actions li::marker {
+    content: "";
+  }
+
+  .case-aloft .aloft-hero-actions span::before {
+    content: none;
+  }
+
+  .case-aloft .aloft-hero-actions span {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    min-height: auto;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(54, 82, 229, 0.18);
+    background: rgba(255, 255, 255, 0.42);
+    color: var(--aloft-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 
