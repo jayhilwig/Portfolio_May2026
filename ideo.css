@@ -805,148 +805,6 @@ body.case-ideo .kicker {
   color: #fff;
 }
 
-@media (max-width: 900px) {
-  .ideo-hero-grid,
-  .ideo-two-col,
-  .ideo-artifact-grid,
-  .ideo-live-prototype,
-  .ideo-revision-grid,
-  .ideo-finding-list {
-    grid-template-columns: 1fr;
-  }
-
-  .ideo-hero-copy h1 {
-    max-width: 12ch;
-  }
-
-  .ideo-stage {
-    min-height: 500px;
-  }
-
-  .ideo-stat-grid,
-  .ideo-scoreboard,
-  .ideo-build-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ideo-insight-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ideo-live-device {
-    justify-self: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .ideo-container {
-    width: min(calc(100% - 24px), 1180px);
-  }
-
-  .ideo-nav {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 14px 0;
-    gap: 12px;
-  }
-
-  .ideo-nav-links {
-    justify-content: flex-start;
-    gap: 12px;
-    font-size: 0.82rem;
-  }
-
-  .ideo-logo {
-    grid-template-columns: repeat(4, 26px);
-  }
-
-  .ideo-logo span {
-    width: 26px;
-    height: 26px;
-    font-size: 1rem;
-  }
-
-  .ideo-logo-sub {
-    white-space: normal;
-  }
-
-  .ideo-back-link {
-    width: fit-content;
-  }
-
-  .ideo-hero {
-    min-height: 0;
-    padding: 54px 0 70px;
-  }
-
-  .ideo-hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ideo-hero-copy h1 {
-    font-size: clamp(3.2rem, 17vw, 5.5rem);
-  }
-
-  .ideo-stage {
-    min-height: 430px;
-  }
-
-  .ideo-card-stack {
-    width: 260px;
-    height: 260px;
-    inset: 6% auto auto 0;
-  }
-
-  .ideo-paper-card {
-    width: 132px;
-    height: 186px;
-    font-size: 1.28rem;
-  }
-
-  .ideo-paper-card.card-look {
-    left: 54px;
-  }
-
-  .ideo-paper-card.card-ask {
-    left: 94px;
-    top: 56px;
-  }
-
-  .ideo-paper-card.card-try {
-    top: 92px;
-  }
-
-  .ideo-stat-grid,
-  .ideo-scoreboard,
-  .ideo-build-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .ideo-live-prototype {
-    padding: 18px;
-  }
-
-  .ideo-live-device {
-    width: min(100%, 392px);
-    padding: 12px;
-    border-radius: 26px;
-  }
-
-  .ideo-live-device iframe {
-    width: 100%;
-    height: min(640px, 150vw);
-    border-radius: 16px;
-  }
-
-  .ideo-section {
-    padding: 64px 0;
-  }
-
-  .ideo-section h2 {
-    max-width: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .ideo-lightbox-trigger img {
     transition: none;
@@ -954,40 +812,186 @@ body.case-ideo .kicker {
 }
 
 /* Mobile-only QA fixes: one-line logo tiles + reflection stripe clearance */
+
+/* Responsive styles
+   Ordered wide-to-narrow so narrower rules win. */
+
+/* <= 900px */
+@media (max-width: 900px) {
+  .ideo-hero-grid,
+    .ideo-two-col,
+    .ideo-artifact-grid,
+    .ideo-live-prototype,
+    .ideo-revision-grid,
+    .ideo-finding-list {
+      grid-template-columns: 1fr;
+    }
+
+    .ideo-hero-copy h1 {
+      max-width: 12ch;
+    }
+
+    .ideo-stage {
+      min-height: 500px;
+    }
+
+    .ideo-stat-grid,
+    .ideo-scoreboard,
+    .ideo-build-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ideo-insight-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ideo-live-device {
+      justify-self: center;
+    }
+}
+
+/* <= 640px */
 @media (max-width: 640px) {
+  .ideo-container {
+      width: min(calc(100% - 24px), 1180px);
+    }
+
+    .ideo-nav {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 14px 0;
+      gap: 12px;
+    }
+
+    .ideo-nav-links {
+      justify-content: flex-start;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    .ideo-logo {
+      grid-template-columns: repeat(4, 26px);
+    }
+
+    .ideo-logo span {
+      width: 26px;
+      height: 26px;
+      font-size: 1rem;
+    }
+
+    .ideo-logo-sub {
+      white-space: normal;
+    }
+
+    .ideo-back-link {
+      width: fit-content;
+    }
+
+    .ideo-hero {
+      min-height: 0;
+      padding: 54px 0 70px;
+    }
+
+    .ideo-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ideo-hero-copy h1 {
+      font-size: clamp(3.2rem, 17vw, 5.5rem);
+    }
+
+    .ideo-stage {
+      min-height: 430px;
+    }
+
+    .ideo-card-stack {
+      width: 260px;
+      height: 260px;
+      inset: 6% auto auto 0;
+    }
+
+    .ideo-paper-card {
+      width: 132px;
+      height: 186px;
+      font-size: 1.28rem;
+    }
+
+    .ideo-paper-card.card-look {
+      left: 54px;
+    }
+
+    .ideo-paper-card.card-ask {
+      left: 94px;
+      top: 56px;
+    }
+
+    .ideo-paper-card.card-try {
+      top: 92px;
+    }
+
+    .ideo-stat-grid,
+    .ideo-scoreboard,
+    .ideo-build-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .ideo-live-prototype {
+      padding: 18px;
+    }
+
+    .ideo-live-device {
+      width: min(100%, 392px);
+      padding: 12px;
+      border-radius: 26px;
+    }
+
+    .ideo-live-device iframe {
+      width: 100%;
+      height: min(640px, 150vw);
+      border-radius: 16px;
+    }
+
+    .ideo-section {
+      padding: 64px 0;
+    }
+
+    .ideo-section h2 {
+      max-width: none;
+    }
+
   .ideo-logo-link {
-    width: 100%;
-    min-width: 0;
-    gap: 12px;
-  }
+      width: 100%;
+      min-width: 0;
+      gap: 12px;
+    }
 
-  .ideo-logo {
-    grid-template-columns: repeat(7, 22px);
-    gap: 2px;
-    flex: 0 0 auto;
-  }
+    .ideo-logo {
+      grid-template-columns: repeat(7, 22px);
+      gap: 2px;
+      flex: 0 0 auto;
+    }
 
-  .ideo-logo span {
-    width: 22px;
-    height: 22px;
-    font-size: 0.82rem;
-  }
+    .ideo-logo span {
+      width: 22px;
+      height: 22px;
+      font-size: 0.82rem;
+    }
 
-  .ideo-logo-sub {
-    min-width: 0;
-    white-space: nowrap;
-    font-size: 0.86rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    .ideo-logo-sub {
+      min-width: 0;
+      white-space: nowrap;
+      font-size: 0.86rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-  .ideo-reflection {
-    background:
-      linear-gradient(90deg, var(--ideo-teal) 0 10px, transparent 10px),
-      var(--ideo-black);
-  }
+    .ideo-reflection {
+      background:
+        linear-gradient(90deg, var(--ideo-teal) 0 10px, transparent 10px),
+        var(--ideo-black);
+    }
 
-  .ideo-reflection .ideo-container {
-    width: min(calc(100% - 48px), 1180px);
-  }
+    .ideo-reflection .ideo-container {
+      width: min(calc(100% - 48px), 1180px);
+    }
 }

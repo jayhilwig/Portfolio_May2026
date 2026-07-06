@@ -621,191 +621,7 @@
   background: var(--amazon-ink);
   color: var(--amazon-card);
 }
-@media (max-width: 980px) {
-  .amazon-case-nav {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-  .amazon-case-search-wrap {
-    grid-column: 1 / -1;
-    order: 3;
-    margin-bottom: 10px;
-  }
-  .amazon-case-links {
-    gap: 12px;
-    font-size: 0.9rem;
-  }
-  .case-amazon .case-hero-grid, .case-amazon .stat-grid, .case-amazon .tool-list {
-    grid-template-columns: 1fr;
-  }
-  .case-amazon .case-hero h1 {
-    max-width: 9ch;
-  }
-  .amazon-product-panel img {
-    min-height: 220px;
-  }
-}
-@media (max-width: 640px) {
-  .case-amazon .container {
-    width: min(calc(100% - 20px), 1180px);
-  }
-  .case-amazon .amazon-hero-meta {
-    gap: 8px;
-  }
-  .case-amazon .amazon-hero-meta span {
-    width: fit-content;
-    max-width: 100%;
-    min-height: auto;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.78rem;
-    font-weight: 500;
-    line-height: 1.2;
-    box-shadow: none;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-  .amazon-case-nav {
-    gap: 10px;
-  }
-  .amazon-case-logo {
-    min-width: 96px;
-  }
-  .amazon-logo-word {
-    font-size: 1.16rem;
-  }
-  .amazon-logo-smile {
-    width: 52px;
-    margin-left: 22px;
-  }
-  .amazon-case-links {
-    justify-content: end;
-    gap: 10px;
-    font-size: 0.78rem;
-  }
-  .amazon-search-filter {
-    display: none;
-  }
-  .amazon-case-search {
-    grid-template-columns: minmax(0, 1fr) auto;
-    height: 36px;
-  }
-  .amazon-search-panel {
-    left: 50%;
-    right: auto;
-    width: min(calc(100vw - 20px), 560px);
-    transform: translateX(-50%);
-  }
-  .amazon-keep-shopping {
-    padding: 12px;
-  }
-  .amazon-product-strip {
-    grid-template-columns: repeat(5, 112px);
-    overflow-x: auto;
-    padding-bottom: 4px;
-    overscroll-behavior-x: contain;
-  }
-  .amazon-case-subnav {
-    gap: 16px;
-    padding: 0 10px;
-    font-size: 0.86rem;
-  }
-  .amazon-retail-hero {
-    padding-top: 26px;
-  }
-  .case-amazon .case-hero h1 {
-    font-size: clamp(2.35rem, 14vw, 4rem);
-  }
-  .amazon-hero-meta span {
-    width: 100%;
-  }
-  .case-amazon .amazon-shelf > .container, .case-amazon .stat-card, .case-amazon .artifact-card {
-    padding: 16px;
-  }
-  .case-amazon h2 {
-    max-width: none;
-  }
-  .case-amazon .row, .case-amazon .artifact-grid {
-    grid-template-columns: 1fr;
-  }
-  .case-amazon .amazon-resource-grid {
-    grid-template-columns: 1fr;
-  }
-  .case-amazon .amazon-resource-card {
-    grid-template-rows: 190px 1fr;
-  }
-  .case-amazon .meta {
-    justify-self: start;
-    text-align: left;
-  }
-  .case-amazon .artifact-card img {
-    aspect-ratio: 4 / 3;
-  }
-  /* Mobile-only QA fixes: search button, image thumbnails, and back-to-work CTA */
-  .amazon-search-button {
-    width: 72px;
-    min-width: 72px;
-    padding: 0;
-    color: transparent;
-    font-size: 0;
-    line-height: 0;
-    text-indent: 0;
-  }
-  .amazon-case-nav {
-    padding-top: 6px;
-  }
-  .amazon-search-button::before {
-    width: 14px;
-    height: 14px;
-    border-width: 3px;
-  }
-  .amazon-search-button::after {
-    width: 9px;
-    height: 3px;
-    left: calc(50% + 6px);
-    top: calc(50% + 7px);
-  }
-  .case-amazon .artifact-card img[data-lightbox] {
-    aspect-ratio: auto;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    object-fit: contain;
-  }
-  .case-amazon .lightbox-image-button {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-  }
-  .case-amazon .cta {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    gap: 14px;
-    margin-top: 28px;
-    padding: 8px 20px 8px 8px;
-    border-radius: 999px;
-    background: var(--amazon-button);
-    color: var(--amazon-ink);
-    box-shadow: inset 0 0 0 1px rgba(15, 17, 17, 0.08);
-    font-weight: 800;
-    text-decoration: none;
-  }
-  .case-amazon .amazon-back-link:active {
-    background: var(--amazon-button-hover);
-    color: var(--amazon-ink);
-  }
-  .case-amazon .amazon-back-link:active .circle {
-    background: var(--amazon-ink);
-    color: var(--amazon-card);
-  }
-}
+
 /* Amazon case study-only overrides.
 Loaded after styles.css and scoped to body.case-amazon so the homepage is untouched. */
 /* Click-to-load YouTube poster */
@@ -1153,36 +969,231 @@ body.case-amazon #figma-placeholder .amazon-figma-note-text {
   font-size: 0.95rem;
   line-height: 1.45;
 }
+
+/* Mobile-only QA fixes: search button, image thumbnails, and back-to-work CTA */
+
+/* Responsive styles
+   Ordered wide-to-narrow so narrower rules win. */
+
+/* <= 980px */
+@media (max-width: 980px) {
+  .amazon-case-nav {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+    .amazon-case-search-wrap {
+      grid-column: 1 / -1;
+      order: 3;
+      margin-bottom: 10px;
+    }
+    .amazon-case-links {
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+    .case-amazon .case-hero-grid, .case-amazon .stat-grid, .case-amazon .tool-list {
+      grid-template-columns: 1fr;
+    }
+    .case-amazon .case-hero h1 {
+      max-width: 9ch;
+    }
+    .amazon-product-panel img {
+      min-height: 220px;
+    }
+}
+
+/* <= 700px */
 @media (max-width: 700px) {
   body.case-amazon #pdf-preview-modal.amazon-modal.amazon-pdf-modal, body.case-amazon #figma-placeholder.amazon-modal.amazon-figma-modal {
-    padding: 0;
-  }
-  body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel, body.case-amazon #figma-placeholder .amazon-modal-panel.amazon-figma-panel {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
-    border: 0 !important;
-  }
-  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar, body.case-amazon #figma-placeholder .amazon-figma-toolbar {
-    flex-wrap: wrap !important;
-    gap: 6px;
-  }
-  body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
-    display: none;
-  }
-  body.case-amazon #pdf-preview-modal .amazon-pdf-viewer, body.case-amazon #figma-placeholder .amazon-figma-viewer {
-    padding: 12px;
-  }
-  body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
-    max-width: 140px;
-  }
-  body.case-amazon #figma-placeholder .amazon-figma-title {
-    flex-basis: 100%;
-    order: 3;
-  }
-  body.case-amazon #figma-placeholder .amazon-figma-notes {
-    padding: 10px 12px 12px;
-  }
+      padding: 0;
+    }
+    body.case-amazon #pdf-preview-modal .amazon-modal-panel.amazon-pdf-panel, body.case-amazon #figma-placeholder .amazon-modal-panel.amazon-figma-panel {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      border: 0 !important;
+    }
+    body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar, body.case-amazon #figma-placeholder .amazon-figma-toolbar {
+      flex-wrap: wrap !important;
+      gap: 6px;
+    }
+    body.case-amazon #pdf-preview-modal .amazon-pdf-toolbar-spacer {
+      display: none;
+    }
+    body.case-amazon #pdf-preview-modal .amazon-pdf-viewer, body.case-amazon #figma-placeholder .amazon-figma-viewer {
+      padding: 12px;
+    }
+    body.case-amazon #pdf-preview-modal .amazon-pdf-zoom-select {
+      max-width: 140px;
+    }
+    body.case-amazon #figma-placeholder .amazon-figma-title {
+      flex-basis: 100%;
+      order: 3;
+    }
+    body.case-amazon #figma-placeholder .amazon-figma-notes {
+      padding: 10px 12px 12px;
+    }
 }
-/* Mobile-only QA fixes: search button, image thumbnails, and back-to-work CTA */
+
+/* <= 640px */
+@media (max-width: 640px) {
+  .case-amazon .container {
+      width: min(calc(100% - 20px), 1180px);
+    }
+    .case-amazon .amazon-hero-meta {
+      gap: 8px;
+    }
+    .case-amazon .amazon-hero-meta span {
+      width: fit-content;
+      max-width: 100%;
+      min-height: auto;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.2;
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .amazon-case-nav {
+      gap: 10px;
+    }
+    .amazon-case-logo {
+      min-width: 96px;
+    }
+    .amazon-logo-word {
+      font-size: 1.16rem;
+    }
+    .amazon-logo-smile {
+      width: 52px;
+      margin-left: 22px;
+    }
+    .amazon-case-links {
+      justify-content: end;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+    .amazon-search-filter {
+      display: none;
+    }
+    .amazon-case-search {
+      grid-template-columns: minmax(0, 1fr) auto;
+      height: 36px;
+    }
+    .amazon-search-panel {
+      left: 50%;
+      right: auto;
+      width: min(calc(100vw - 20px), 560px);
+      transform: translateX(-50%);
+    }
+    .amazon-keep-shopping {
+      padding: 12px;
+    }
+    .amazon-product-strip {
+      grid-template-columns: repeat(5, 112px);
+      overflow-x: auto;
+      padding-bottom: 4px;
+      overscroll-behavior-x: contain;
+    }
+    .amazon-case-subnav {
+      gap: 16px;
+      padding: 0 10px;
+      font-size: 0.86rem;
+    }
+    .amazon-retail-hero {
+      padding-top: 26px;
+    }
+    .case-amazon .case-hero h1 {
+      font-size: clamp(2.35rem, 14vw, 4rem);
+    }
+    .amazon-hero-meta span {
+      width: 100%;
+    }
+    .case-amazon .amazon-shelf > .container, .case-amazon .stat-card, .case-amazon .artifact-card {
+      padding: 16px;
+    }
+    .case-amazon h2 {
+      max-width: none;
+    }
+    .case-amazon .row, .case-amazon .artifact-grid {
+      grid-template-columns: 1fr;
+    }
+    .case-amazon .amazon-resource-grid {
+      grid-template-columns: 1fr;
+    }
+    .case-amazon .amazon-resource-card {
+      grid-template-rows: 190px 1fr;
+    }
+    .case-amazon .meta {
+      justify-self: start;
+      text-align: left;
+    }
+    .case-amazon .artifact-card img {
+      aspect-ratio: 4 / 3;
+    }
+    /* Mobile-only QA fixes: search button, image thumbnails, and back-to-work CTA */
+    .amazon-search-button {
+      width: 72px;
+      min-width: 72px;
+      padding: 0;
+      color: transparent;
+      font-size: 0;
+      line-height: 0;
+      text-indent: 0;
+    }
+    .amazon-case-nav {
+      padding-top: 6px;
+    }
+    .amazon-search-button::before {
+      width: 14px;
+      height: 14px;
+      border-width: 3px;
+    }
+    .amazon-search-button::after {
+      width: 9px;
+      height: 3px;
+      left: calc(50% + 6px);
+      top: calc(50% + 7px);
+    }
+    .case-amazon .artifact-card img[data-lightbox] {
+      aspect-ratio: auto;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      object-fit: contain;
+    }
+    .case-amazon .lightbox-image-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+    .case-amazon .cta {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      padding: 8px 20px 8px 8px;
+      border-radius: 999px;
+      background: var(--amazon-button);
+      color: var(--amazon-ink);
+      box-shadow: inset 0 0 0 1px rgba(15, 17, 17, 0.08);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .case-amazon .amazon-back-link:active {
+      background: var(--amazon-button-hover);
+      color: var(--amazon-ink);
+    }
+    .case-amazon .amazon-back-link:active .circle {
+      background: var(--amazon-ink);
+      color: var(--amazon-card);
+    }
+}

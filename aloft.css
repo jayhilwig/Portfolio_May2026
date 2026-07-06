@@ -612,171 +612,178 @@ body.case-aloft {
   color: #fff;
 }
 
+/* Responsive styles
+   Ordered wide-to-narrow so narrower rules win. */
+
+/* <= 1080px */
 @media (max-width: 1080px) {
   .aloft-appbar {
-    gap: 18px;
-    padding: 10px 0;
-  }
+      gap: 18px;
+      padding: 10px 0;
+    }
 
-  .aloft-page-grid,
-  .aloft-panel-grid,
-  .case-aloft .section-head {
-    grid-template-columns: 1fr;
-  }
+    .aloft-page-grid,
+    .aloft-panel-grid,
+    .case-aloft .section-head {
+      grid-template-columns: 1fr;
+    }
 
-  .aloft-page-grid {
-    align-items: start;
-  }
+    .aloft-page-grid {
+      align-items: start;
+    }
 
-  .aloft-product-stage {
-    order: -1;
-  }
+    .aloft-product-stage {
+      order: -1;
+    }
 
-  .case-aloft h1 {
-    max-width: 10ch;
-  }
+    .case-aloft h1 {
+      max-width: 10ch;
+    }
 
-  .aloft-floating-card {
-    display: none;
-  }
+    .aloft-floating-card {
+      display: none;
+    }
 }
 
+/* <= 760px */
 @media (max-width: 760px) {
   .case-aloft .container,
-  .aloft-page-grid,
-  .aloft-appbar {
-    width: min(calc(100% - 22px), 1180px);
-  }
+    .aloft-page-grid,
+    .aloft-appbar {
+      width: min(calc(100% - 22px), 1180px);
+    }
 
-  .aloft-brand {
-    min-width: 0;
-  }
+    .aloft-brand {
+      min-width: 0;
+    }
 
-  .aloft-brand span span {
-    display: none;
-  }
+    .aloft-brand span span {
+      display: none;
+    }
 
-  .aloft-portfolio-links {
-    gap: 12px;
-    font-size: 0.84rem;
-  }
+    .aloft-portfolio-links {
+      gap: 12px;
+      font-size: 0.84rem;
+    }
 
-  .aloft-case-subnav {
-    width: min(calc(100% - 22px), 1180px);
-    gap: 16px;
-    font-size: 0.86rem;
-  }
+    .aloft-case-subnav {
+      width: min(calc(100% - 22px), 1180px);
+      gap: 16px;
+      font-size: 0.86rem;
+    }
 
-  .aloft-hero {
-    padding-top: 24px;
-  }
+    .aloft-hero {
+      padding-top: 24px;
+    }
 
-  .case-aloft h1 {
-    font-size: clamp(2.7rem, 15vw, 4.4rem);
-  }
+    .case-aloft h1 {
+      font-size: clamp(2.7rem, 15vw, 4.4rem);
+    }
 
-  .case-aloft h2 {
-    max-width: none;
-  }
+    .case-aloft h2 {
+      max-width: none;
+    }
 
-  .aloft-window-chrome strong {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+    .aloft-window-chrome strong {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
-  .aloft-hero-actions span {
-    width: 100%;
-    justify-content: center;
-  }
+    .aloft-hero-actions span {
+      width: 100%;
+      justify-content: center;
+    }
 
-  .case-aloft .stat-grid,
-  .aloft-artifact-grid {
-    grid-template-columns: 1fr;
-  }
+    .case-aloft .stat-grid,
+    .aloft-artifact-grid {
+      grid-template-columns: 1fr;
+    }
 
-  .aloft-artifact-card--wide {
-    grid-column: auto;
-  }
+    .aloft-artifact-card--wide {
+      grid-column: auto;
+    }
 
-  .aloft-artifact-card,
-  .aloft-info-panel,
-  .case-aloft .stat-card {
-    padding: 16px;
-  }
+    .aloft-artifact-card,
+    .aloft-info-panel,
+    .case-aloft .stat-card {
+      padding: 16px;
+    }
 
-  .aloft-image-button img {
-    max-height: 420px;
-  }
+    .aloft-image-button img {
+      max-height: 420px;
+    }
 
-  .case-aloft .row {
-    grid-template-columns: 1fr;
-  }
+    .case-aloft .row {
+      grid-template-columns: 1fr;
+    }
 
-  .case-aloft .meta {
-    justify-self: start;
-    text-align: left;
-  }
+    .case-aloft .meta {
+      justify-self: start;
+      text-align: left;
+    }
 }
 
+/* <= 640px */
 @media (max-width: 640px) {
   .case-aloft .aloft-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-    padding: 0;
-    list-style: none;
-  }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 0;
+      list-style: none;
+    }
 
-  .case-aloft .aloft-hero-actions li,
-  .case-aloft .aloft-hero-actions span {
-    list-style: none;
-  }
+    .case-aloft .aloft-hero-actions li,
+    .case-aloft .aloft-hero-actions span {
+      list-style: none;
+    }
 
-  .case-aloft .aloft-hero-actions li::marker {
-    content: "";
-  }
+    .case-aloft .aloft-hero-actions li::marker {
+      content: "";
+    }
 
-  .case-aloft .aloft-hero-actions span::before {
-    content: none;
-  }
+    .case-aloft .aloft-hero-actions span::before {
+      content: none;
+    }
 
-  .case-aloft .aloft-hero-actions span {
-    display: inline-flex;
-    align-items: center;
-    width: auto;
-    min-height: auto;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(54, 82, 229, 0.18);
-    background: rgba(255, 255, 255, 0.42);
-    color: var(--aloft-muted);
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1.2;
-    box-shadow: none;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
+    .case-aloft .aloft-hero-actions span {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      min-height: auto;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(54, 82, 229, 0.18);
+      background: rgba(255, 255, 255, 0.42);
+      color: var(--aloft-muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.2;
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
 }
 
+/* <= 460px */
 @media (max-width: 460px) {
   .aloft-portfolio-links a:nth-child(2) {
-    display: none;
-  }
+      display: none;
+    }
 
-  .aloft-window-chrome {
-    min-height: 36px;
-    padding: 0 10px;
-  }
+    .aloft-window-chrome {
+      min-height: 36px;
+      padding: 0 10px;
+    }
 
-  .aloft-window-chrome span {
-    width: 7px;
-    height: 7px;
-  }
+    .aloft-window-chrome span {
+      width: 7px;
+      height: 7px;
+    }
 
-  .aloft-artifact-card h3 {
-    font-size: 1.3rem;
-  }
+    .aloft-artifact-card h3 {
+      font-size: 1.3rem;
+    }
 }
