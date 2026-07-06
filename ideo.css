@@ -784,6 +784,27 @@ body.case-ideo .kicker {
   font-size: 0.9rem;
 }
 
+.ideo-back-link {
+  margin-top: 28px;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ideo-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ideo-back-link:hover,
+.ideo-back-link:focus-visible {
+  color: var(--ideo-teal);
+  text-decoration: none;
+}
+
+.ideo-back-link .circle {
+  background: var(--ideo-black);
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .ideo-hero-grid,
   .ideo-two-col,
@@ -847,6 +868,10 @@ body.case-ideo .kicker {
 
   .ideo-logo-sub {
     white-space: normal;
+  }
+
+  .ideo-back-link {
+    width: fit-content;
   }
 
   .ideo-hero {
